@@ -42,7 +42,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>img/icono_siproyect.jpg</normaloff>img/icono_siproyect.jpg</iconset>
+    <normaloff>BIDIPROYECT-ICO2.ico</normaloff>BIDIPROYECT-ICO2.ico</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
