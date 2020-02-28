@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1010</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1200</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Biblioteca de Proyectos</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>img/icono_siproyect.jpg</normaloff>img/icono_siproyect.jpg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+ background-color: white;
+}
+
+QCheckBox {
+    border: 0px;
+    
+}
+
+QLineEdit{
+	border: 1px solid gray;
+    border-raius: 4px;
+	font-size: 14px;
+	height: 30px;
+}
+
+QLabel{
+	color: black;
+	font: 75 14px &quot;Roboto Medium&quot;;
+}
+
+QLabel#lblTitulo{
+	color: darkblue;
+	font: 75 26px &quot;Cooper Black&quot;;
+}
+
+QGroupBox{
+	color: black;
+	font: 75 14px &quot;Roboto Medium&quot;;
+}
+
+QRadioButton{
+	color: rgb(0,0,255);
+	font: 75 14px &quot;Roboto Medium&quot;;
+}
+
+QPushButton{
+	color: black;
+    background: white;
+	border: 1px solid black;
+    border-radius: 12px;
+}
+
+QPushButton#btnCargaProyectos:hover{
+    color: black;
+	background-color: orange;
+}
+
+QPushButton#btnVerProyecto:hover{
+    color: black;
+	background-color: orange;
+}
+
+
+QPushButton#btnInforme:hover{
+    color: black;
+	background-color: orange;
+}
+
+QPushButton#btnDesarrollo:hover{
+	color:black;
+    background-color: orange;
+}
+
+QPushButton#btnManuales:hover{
+    color: black;
+	background-color: orange;
+}
+
+
+QPushButton#btnCerrar:hover{
+    color: black;
+	background-color: orange;
+}
+
+QPushButton:hover{
+    color: black;
+	background-color: orange;
+}
+</string>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <widget class="QPushButton" name="btnCerrar">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>530</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="toolTip">
+    <string>Cerrar sin seleccionar datos</string>
+   </property>
+   <property name="text">
+    <string>Cerrar</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>50</y>
+     <width>1001</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Seleccione el Proyecto a Consultar y/o Descargar</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnVerProyecto">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>530</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string>Visualizar Proyecto</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnInforme">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>530</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Descargar Proyecto</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tablaProyectos">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>1181</width>
+     <height>381</height>
+    </rect>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
+   <property name="dragDropOverwriteMode">
+    <bool>false</bool>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <property name="sortingEnabled">
+    <bool>true</bool>
+   </property>
+   <attribute name="verticalHeaderDefaultSectionSize">
+    <number>35</number>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>Titulo del Proyecto</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Año</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Trayecto</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Tutor / Asesor</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Metodologia</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Tipo de Desarrollo</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Informe</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Desarrollo</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Manuales</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Nombre Informe</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Nombre Desarrollo</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Nombre Manual</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QLabel" name="fondo">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1201</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>img/Fondo Pantalla Datos.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnDesarrollo">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>530</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Descargar Desarrollo</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnManuales">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>530</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Descargar Manuales</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitulo">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>3</y>
+     <width>1001</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Biblioteca de Proyectos</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCargaProyectos">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>530</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cargar Tabla Proyectos</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtFiltro">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>480</y>
+     <width>311</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>480</y>
+     <width>51</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Buscar:</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="grpFiltrarPor">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>460</y>
+     <width>531</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Filtrar por:</string>
+   </property>
+   <widget class="QRadioButton" name="optTutor">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>20</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tutor</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="optTitulo">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>20</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Titulo</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="optTrayecto">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>20</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Trayecto</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="optMetodo">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>20</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Metodologia</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="optTDesarrollo">
+    <property name="geometry">
+     <rect>
+      <x>397</x>
+      <y>21</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>T. Desarrollo</string>
+    </property>
+   </widget>
+  </widget>
+  <zorder>fondo</zorder>
+  <zorder>btnCerrar</zorder>
+  <zorder>label</zorder>
+  <zorder>btnVerProyecto</zorder>
+  <zorder>btnInforme</zorder>
+  <zorder>tablaProyectos</zorder>
+  <zorder>btnDesarrollo</zorder>
+  <zorder>btnManuales</zorder>
+  <zorder>lblTitulo</zorder>
+  <zorder>btnCargaProyectos</zorder>
+  <zorder>txtFiltro</zorder>
+  <zorder>label_12</zorder>
+  <zorder>grpFiltrarPor</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

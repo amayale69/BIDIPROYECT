@@ -1,0 +1,1854 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>519</width>
+    <height>582</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>519</width>
+    <height>582</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>519</width>
+    <height>582</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Ayuda del Sistema</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>img/icono_siproyect.jpg</normaloff>img/icono_siproyect.jpg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+ background-color: white;
+}
+
+QCheckBox {
+    border: 0px;
+    
+}
+
+QLineEdit{
+	border: 1px solid gray;
+    border-raius: 4px;
+	font-size: 14px;
+	height: 30px;
+}
+
+QLabel{
+	color: black;
+	font: 75 14px &quot;Roboto Medium&quot;;
+}
+
+QLabel#lblTitulo{
+	color: darkblue;
+	font: 75 18px &quot;Cooper Black&quot;;
+}
+
+QLabel#lblTitulo_2{
+	color: darkblue;
+	font: 75 18px &quot;Cooper Black&quot;;
+}
+
+QLabel#lblTitulo_3{
+	color: darkblue;
+	font: 75 18px &quot;Cooper Black&quot;;
+}
+
+QLabel#lblTitulo_4{
+	color: darkblue;
+	font: 75 18px &quot;Cooper Black&quot;;
+}
+
+QLabel#lblTitulo_5{
+	color: darkblue;
+	font: 75 18px &quot;Cooper Black&quot;;
+}
+
+QLabel#lblTitulo_6{
+	color: darkblue;
+	font: 75 18px &quot;Cooper Black&quot;;
+}
+
+QLabel#lblTitulo_7{
+	color: darkblue;
+	font: 75 18px &quot;Cooper Black&quot;;
+}
+
+QLabel#lblTitulo_8{
+	color: darkblue;
+	font: 75 18px &quot;Cooper Black&quot;;
+}
+
+QLabel#lblTitulo_9{
+	color: darkblue;
+	font: 75 18px &quot;Cooper Black&quot;;
+}
+
+QLabel#lblTitulo_10{
+	color: darkblue;
+	font: 75 18px &quot;Cooper Black&quot;;
+}
+
+QGroupBox{
+	color: black;
+	font: 75 14px &quot;Roboto Medium&quot;;
+}
+
+QRadioButton{
+	color: rgb(0,0,255);
+	font: 75 14px &quot;Roboto Medium&quot;;
+}
+
+QPushButton{
+	color: black;
+    background: white;
+	border: 1px solid black;
+    border-radius: 12px;
+}
+
+QPushButton:hover{
+    color: black;
+	background-color: orange;
+}
+</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>9</y>
+     <width>511</width>
+     <height>531</height>
+    </rect>
+   </property>
+   <property name="tabPosition">
+    <enum>QTabWidget::North</enum>
+   </property>
+   <property name="tabShape">
+    <enum>QTabWidget::Triangular</enum>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tabPrincipal">
+    <attribute name="title">
+     <string>Ayuda General</string>
+    </attribute>
+    <widget class="QScrollArea" name="scrollArea1">
+     <property name="geometry">
+      <rect>
+       <x>-6</x>
+       <y>3</y>
+       <width>511</width>
+       <height>510</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>10</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>510</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>510</height>
+      </size>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>0</width>
+       <height>500</height>
+      </size>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>509</width>
+        <height>508</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>500</height>
+       </size>
+      </property>
+      <widget class="QLabel" name="lblTitulo">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>9</y>
+         <width>491</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Indice General  de Ayuda</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnAyudaRegUsuarios">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>320</y>
+         <width>461</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Como Registrar Usuarios</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnAyudaCambioClave">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>280</y>
+         <width>461</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Como Cambiar mi Contraseña</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>60</y>
+         <width>361</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="text">
+        <string>Haga Click sobre el tipo de ayuda que requiere consultar:</string>
+       </property>
+       <property name="openExternalLinks">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnAyudaPublico">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>120</y>
+         <width>461</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>¿A que tengo acceso como usuario público?</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnAyudaIdentificarse">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>240</y>
+         <width>461</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>¿Como identificarme para acceder al menu administrador?</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnAyudaBiblioteca">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>200</y>
+         <width>461</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>¿Como Consultar la Biblioteca y Descargar Información?</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnAyudaRegProyectos">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>360</y>
+         <width>461</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Pasos a seguir para registrar un nuevo proyecto</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnAyudaSolvencias">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>400</y>
+         <width>461</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Como emitir la solvencia académica a un estudiante</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnEstadistica">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>440</y>
+         <width>461</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Como emitir el reporte de estadísticas de proyectos</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnAyudaProyectoRecientes">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>160</y>
+         <width>461</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>¿Como Consultar los Proyectos Recientes y Descargar Información?</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <attribute name="title">
+     <string>Acceso Publico</string>
+    </attribute>
+    <widget class="QScrollArea" name="scrollArea_5">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>482</width>
+        <height>10000</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>10000</height>
+       </size>
+      </property>
+      <widget class="QLabel" name="lblTitulo_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>481</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Restricciones Acceso Público</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>471</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>El usuario público y/o no identificado en el sistema tiene acceso a los siguientes funciones del sistema:
+
+1.- Consulta de Proyectos Recientes:
+     Desde la pantalla principal se muestran los 20 proyectos mas recientes cargados en sistema los cuales se acceden al hacer doble click sobre alguno de los proyectos listados y alli podrá leer el informe del proyecto y descargar la informacion y los productos desarrollados. Para mas información pulse el boton &quot;Ayuda Proyectos Recientes&quot;
+
+2.- Consultar la biblioteca:
+     En el menu &quot;Consulta&quot; se accede a la biblioteca donde el usuario puede ubicar todos los proyectos que estan registrados en sistemas y organizar la informacion y ubicarlos por Titulo, Trayecto, Tutor, Metodologia y Tipo de Desarrollo. Para saber mas pulse el botón &quot;Ayuda Tema Biblioteca&quot; </string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnProyectoRecientes">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>280</y>
+         <width>421</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ayuda Tema Proyectos Recientes</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnAyudaBiblioteca2">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>320</y>
+         <width>421</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ayuda Tema Biblioteca</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnRegresarMenuGeneral_2">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>360</y>
+         <width>421</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Regresar al Menu Ayuda General</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <attribute name="title">
+     <string>Proyectos Recientes</string>
+    </attribute>
+    <widget class="QScrollArea" name="scrollArea_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-591</y>
+        <width>482</width>
+        <height>1100</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>1100</height>
+       </size>
+      </property>
+      <widget class="QLabel" name="lblTitulo_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>481</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ayuda Proyectos Recientes</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>461</width>
+         <height>231</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Proyectos_Recientes.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>290</y>
+         <width>471</width>
+         <height>231</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>En el cuaderno que se muestra en la pantalla principal del sistema, se listan los 20 proyectos mas recientes, para acceder a ellos siga los siguuientes pasos:
+
+1.-  Organizar la información haciendo click en las opciones que se encuentran arriba del listado, donde ordenara los datos por codigo del proyecto, trayecto, titulo, metodologia y tipo de desarrollo.
+
+2.- En el recuadro buscar una vez seleccionado el tipo de ordenamiento podrá ubicar el proyecto introduciendo un texto o palabra de busqueda y el listado se posicionara sobre el primer registro que coincida con la palabra o texto introducido.
+
+3.- Luego de ubicar el proyecto de su interés haga doble click para consultar la información completa del proyecto.
+
+4.- Al pulsar doble click en el proyecto a consultar, se despliega la pantalla de consulta de proyectos que se muestra a continuación...</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>530</y>
+         <width>471</width>
+         <height>311</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Consulta_Proyectos_Recientes.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>850</y>
+         <width>471</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Una vez mostrada la información del proyecto, se observará el estado del informe, desarrollo y del manual. Si se indica el estado como &quot;Entregado&quot;, usted podra realizar las siguientes opciones:
+
+1.- Visualizar el informe: Haciendo click en el botón &quot;Leer informe&quot;, el proyecto se abrirá en el visor de documentos PDF por defecto en el computador. 
+
+2.- Descargar: En cada uno de los productos que se guardan en sistema (Informe, Desarrollo y Manuales), si se indica el estatus en &quot;Entregado, usted tendrá acceso a descargarlo en el directorio que usted elija.
+
+</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnRegresarMenuGeneral">
+       <property name="geometry">
+        <rect>
+         <x>54</x>
+         <y>1040</y>
+         <width>351</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Regresar al Menu Ayuda General</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_8">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <attribute name="title">
+     <string>Biblioteca</string>
+    </attribute>
+    <widget class="QScrollArea" name="scrollArea_7">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>482</width>
+        <height>750</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>750</height>
+       </size>
+      </property>
+      <widget class="QLabel" name="lblTitulo_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>481</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ayuda Biblioteca</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>471</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Consulta_Biblioteca.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>320</y>
+         <width>471</width>
+         <height>361</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Al levantar la pantalla de la biblioteca por primera vez, el listado de proyectos aparecerá vacía y deberá pulsar el boton &quot;Cargar Biblioteca&quot; para que el sistema muestre la lista de los proyectos que tienen documentos entregados... Así mismo, cada vez que se alimente el sistema con nuevos proyectos deberá usar ésta opcion para actualizar la lista de proyectos.
+
+Una vez actualizada la lista, usted podrá realizar las siguientes operaciones:
+
+1.- Ordenar Lista: Podrá organizar los datos mostrados por las siguientes opciones: Titulo, Tutor Metodologico, Metodologia Empleada y  Tipo de Desarrollo.
+
+2.- Buscar información: En el recuadro Buscar, podra ingresar texto de busqueda dentro del campo establecido por el orden de la lista.
+
+3.- Visualizar Proyectos: Al seleccionar un registro de la lista usted podrá visualizar el documento informe del proyecto seleccionado en el visor por defecto para documentos PDF del computador.
+
+4.- Descargar Proyecto: Al pulsar esta opción, el sistema le preguntará donde copiará el documento informe del proyecto.
+
+5.- Descargar Desarrollo: Si el estudiante entregó el desarrollo, usted podrá descargarlo a la unidad o carpeta que seleccione para almacenar el archivo comprimido del desarrollo.
+
+6.- Descargar Manuales: Al igual que los dos pasos anteriores, el sistema le solicitara la información de donde copiará el documento del manual del desarrollo.</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnRegresarMenuGeneral_3">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>700</y>
+         <width>351</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Regresar al Menu Ayuda General</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_9">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <attribute name="title">
+     <string>Identificarse Administrador</string>
+    </attribute>
+    <widget class="QScrollArea" name="scrollArea_10">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_10">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-341</y>
+        <width>482</width>
+        <height>850</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>850</height>
+       </size>
+      </property>
+      <widget class="QPlainTextEdit" name="plainTextEdit_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>590</y>
+         <width>471</width>
+         <height>161</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Para identificarse en el sistema ingrese su usuario y clave de acceso en el recuadro de inicio de sesión que se encuentra a la derecha de la lista de proyectos recientes de la pantalla principal del sistema y haga click en el botón acceder... 
+
+Si los datos suministrados son correctos y el usuario se encuentra en estado &quot;Activo&quot; en el sistema, el sistema le dará la bienvenida y habilitará el botón &quot;Desconectar&quot; con lo cual se activará su acceso a las opciones restringuidas del sistema.
+
+Nota: Recuerde, una vez haya culminado sus operaciones de administrador y desea dejar la aplicación en ejecución deberá pulsar el botón desconectar para que inhabilite el menu de administración.</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>370</y>
+         <width>181</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Identificarse.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnRegresarMenuGeneral_4">
+       <property name="geometry">
+        <rect>
+         <x>54</x>
+         <y>780</y>
+         <width>351</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Regresar al Menu Ayuda General</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblTitulo_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>481</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ayuda Identificarse (Administrador)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>471</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Pantalla_Principal.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>370</y>
+         <width>181</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Usuario_Registrado.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>350</y>
+         <width>151</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Inicio de Sesión</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>350</y>
+         <width>151</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Usuario Registrado</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <attribute name="title">
+     <string>Registrar Usuarios</string>
+    </attribute>
+    <widget class="QScrollArea" name="scrollArea_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-691</y>
+        <width>482</width>
+        <height>1200</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>1200</height>
+       </size>
+      </property>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>471</width>
+         <height>261</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Lista_usuarios.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>310</y>
+         <width>471</width>
+         <height>161</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Para acceder al registro de usuarios, en el menu &amp;quot;USUARIOS&amp;quot; pulse la opcion &amp;quot;Registrar Usuarios&amp;quot;, alli se desplegara la pantalla mostrando la lista de los usuarios registrados en el sistema.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Al hacer doble click en un usuario de la lista, podrá editar sus datos así como activar o inactivar al usuario con excepcion del usuario principal &amp;quot;ADMIN&amp;quot; el cual está protegido por el sistema y que es de uso exclusivo del Coordinador del PNF&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;En la edicion del registro también podrá reiniciar la clave de acceso del usuario seleccionado.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>490</y>
+         <width>471</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Actualiza_Registro_Usuarios.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblTitulo_6">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>481</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ayuda Registrar Usuarios</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>770</y>
+         <width>471</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Si usted desea crear un nuevo usuario, deberá hacer click en el boton &amp;quot;Nuevo Registro&amp;quot; y aparecerá la pantalla de registro en blanco para que cargue la información del nuevo usuario. Al guardar la información se le asignará una clave &amp;quot;TEMPORAL&amp;quot; de acceso, el cual deberá ser actualizada por el usuario creado al ingresar en el sistema.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>850</y>
+         <width>471</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Nuevo_Registro_Usuarios.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnRegresarMenuGeneral_5">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>1140</y>
+         <width>351</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Regresar al Menu Ayuda General</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <attribute name="title">
+     <string>Cambiar Clave Acceso</string>
+    </attribute>
+    <widget class="QScrollArea" name="scrollArea_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>499</width>
+        <height>509</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>500</height>
+       </size>
+      </property>
+      <widget class="QLabel" name="lblTitulo_7">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>481</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ayuda Registrar Usuarios</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>471</width>
+         <height>261</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Actualizar_Claves.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>320</y>
+         <width>471</width>
+         <height>121</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Para actualizar la clave de acceso, el &amp;quot;Usuario Activo&amp;quot; deberá ingresar al Menu &amp;quot;USUARIOS ---&amp;gt; Cambiar Clave&amp;quot; donde seguidamente se abrirá la pantalla de actualización de clave.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Una vez en la pantalla el usuario deberá colocar la nueva clave y confirmarla antes de pulsar el boton guardar&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Una vez realizado el sistema emitirá un mensaje de clave actualizada..&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnRegresarMenuGeneral_6">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>460</y>
+         <width>351</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Regresar al Menu Ayuda General</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <attribute name="title">
+     <string>Registrar Proyectos</string>
+    </attribute>
+    <widget class="QScrollArea" name="scrollArea_6">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-3591</y>
+        <width>482</width>
+        <height>4100</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>4100</height>
+       </size>
+      </property>
+      <widget class="QLabel" name="lblTitulo_8">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>481</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ayuda Registrar Proyectos</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Pantalla_Inicio_Registro_Proyectos.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>360</y>
+         <width>471</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Para iniciar el registro de un proyecto, primero debe ubicar o crear los datos del Periodo Academico y Sección en los que fueron realizados los proyectos, para ello haga click en el botón &quot;Buscar&quot; para desplegar la lista de Secciones Aperturadas.
+
+Si el Periodo Academico no aparece en la lista proceda a la apertura de un nuevo periodo academico pulsando el boton &quot;Crear Nuevo&quot;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>470</y>
+         <width>271</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Lista_Secciones_Aperturadas.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_7">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>1095</y>
+         <width>481</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Al crear la sección o seleccionarla proceda a registrar un nuevo proyecto pulsando el botón &quot;Registrar Nuevo Proyecto&quot;
+
+Si hay proyectos en la lista del periodo seleccionado, puede seleccionar un proyecto de la lista y con doble click o pulsando el botón &quot;Consultar Proyecto&quot; puede acceder a su información para modificarlo o completar la información del registro.</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>780</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Aperturar_Seccion.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>1210</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Registrar_Proyecto_Metodologia.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>1510</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Registrar_Proyecto_Tipo_Desarrollo.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_8">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>1820</y>
+         <width>481</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Al Editar o Crear un proyecto como se muestra en las imagenes anteriores, puede seleccionar la metodologia y el tipo de desarrollo haciendo click en el boton de la información correspondiente. Si no existe la metodología o el tipo de desarrollo en el listado puede agregar la información agregando la información en el cuadro de texto y pulsar el boton &quot;Agregar Nuevo&quot;.
+
+Una vez completada la información basica del proyecto tales como título, Grupo de Desarrollo metodologia y tipo de desarrollo, guarde la información con lo que el sistema generará el codigo unico de identificacion del proyecto.
+
+Luego proceda a seleccionar los estudiantes que integran el grupo de desarrollo del proyecto bien sea colocando la cedula en el recuadro de texto &quot;Cedula de Estudiante&quot; y pulsar el botón Agregar Integrante o seleccionar a un estudiante de la lista con el boton &quot;Consultar Estudiantes&quot;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>1990</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Seleccion_Registro_Proyecto_Seleccion_Estudiantes.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_9">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>2290</y>
+         <width>481</width>
+         <height>121</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Puede buscar al estudiante ordenando la lista por cedula, nombre y apellido e introduciendo el dato a buscar el el recuadro de texto el cual hará que la lista se dezplace cada vez que introduzca un caracter que coincida con la informacion contenida en la columna de datos del metodo de ordenamiento activo.
+
+Si el estudiante no esta en la lista, puede agregar los datos del estudiante pulsando el boton &quot;Nuevo Registro&quot; o actualizar la información de un estudiante seleccionandolo en la lista y pulsar el boton &quot;Editar Registro&quot;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>2410</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Seleccion_Registro_Proyecto_Editar_Estudiantes.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_10">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>2710</y>
+         <width>481</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>En la edicion de los datos del estudiante puede cambiar el estado del estudiante de Activo a Inactivo y Viceversa.
+
+Una vez creado el estudiante y guardada la información, el sistema retorna a la lista donde deberá ubicar el estudiante registrado y/o actualizado y haciendo doble click en el registro o pulsando el boton &quot;Seleccionar&quot;, el sistema lo agregará a la lista de integrantes del proyecto.
+
+Si pulsa el boton retornar, el sistema no agregará ningun estudiante a la lista de integrantes.</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>2840</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Seleccion_Registro_Proyecto_Seleccion_Tipo_Tutor.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_11">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>3150</y>
+         <width>481</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Para registrar a los tutores involucrados con el proyecto, primero debe seleccionar el tipo de tutor a incorporar como se muestra en la imagen anterior los cuales son de tres tipos: Académico, Tecnico Metodologico y Comunitario.
+
+Luego de seleccionar el tipo de tutor, el procedimiento es igual al de agregar estudiantes a la lista de integrantes.</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>3250</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Seleccion_Registro_Proyecto_Seleccion_Tutores.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_12">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>3550</y>
+         <width>481</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Finalizado el registrto de la información de la ficha del proyecto, proceda a cargar en sistema los soportes consignados por los estudiantes referentes al proyecto digitalizado en formato PDF y los Desarrollo y Manuales en formato ZIP o RAR pulsando el boton de &quot;Subir&quot; correspondiente, donde luego de pulsar en ella, el sistema abrira un cuadro de dialogo donde le solicitará la ubicación del archivo a guardar y catalogar en el sistema.</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_23">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>3640</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Registrar_Proyecto_Cargar_Archivo.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_13">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>3940</y>
+         <width>481</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Al llegar hasta aqui, usted ha completado satisfactoriamente el registro de un proyecto y el mismo podrá ser consultado en la biblioteca, estadisticas y en la emision de solvencias.</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnRegresarMenuGeneral_7">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>4010</y>
+         <width>351</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Regresar al Menu Ayuda General</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_6">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <attribute name="title">
+     <string>Reporte de Estadisticas</string>
+    </attribute>
+    <widget class="QScrollArea" name="scrollArea_8">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_8">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-541</y>
+        <width>482</width>
+        <height>1050</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>1050</height>
+       </size>
+      </property>
+      <widget class="QLabel" name="lblTitulo_9">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>481</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ayuda Reporte Estadisticas</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_24">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>40</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Pantalla_Estadisticas.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_14">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>350</y>
+         <width>481</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>En las estadisticas se muestra un resumen de los proyectos ordenador por tutor metodologico, año y seccion. Usted puede generar las estadisticas de acuerdo con algunos filtros pre-establecidos tales como: Periodo Academico (Del Año Especifico o de un Rango de Fechas), Cedula del Tutor y EL tipo de Estadística D(Detallado o Consolidado).
+
+Una vez seleccionado los filtros correspondientes, haga click en el boton &quot;Generar Consulta&quot; y el sistema cargará en la lista el resultado de la estadistica solicitada.
+
+Si desea generar otra estadistica, deberá pulsar el botón &quot;Nueva Consulta&quot;.
+
+Una vez tenga en pantalla la estadistica requerida, al pulsar el botón &quot;Imprimir&quot; ubicado abajo y a la derecha de la lista, podrá emitir un docuento PDF con el resultado de la consulta como se muestra a continuación.</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>550</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Reporte_Estadistica.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_15">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>860</y>
+         <width>481</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Imprima el Reporte o proceda a &quot;Guardar como...&quot; para guardar el reporte en el destino que usted elija.
+
+En este momento, usted ha completado la consulta de las estadísticas.</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnRegresarMenuGeneral_8">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>960</y>
+         <width>351</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Regresar al Menu Ayuda General</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_7">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <attribute name="title">
+     <string>Emitir Solvencias</string>
+    </attribute>
+    <widget class="QScrollArea" name="scrollArea_9">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_9">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-441</y>
+        <width>482</width>
+        <height>950</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>950</height>
+       </size>
+      </property>
+      <widget class="QLabel" name="lblTitulo_10">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>481</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ayuda Emisión de Solvencias</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_16">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>350</y>
+         <width>481</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Para emitir la Solvencia Academica de un estudiante, debe ingresar la cedula del estudiante y pulsar el botón &quot;Buscar&quot;.
+
+Seguidamente se desplegará en el cuadro lista la consulta de los proyectos en los cuales ha participado el estudiante durante sus trayectos académicos.
+
+Al seleccionar el proyecto de la lista de cuya solvencia desee emitir, si el estado de los campos Informes, Desarrollo y Manuales se encuantran en estado &quot;Entregado&quot; y/o &quot;No Requerido&quot; para los dos ultimos en los Trayectos I y II, el sistema procederá a emitir la solvencia académica, de lo contrario el sistema no permitira dicha emisión.</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>40</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Emision_Solvencias.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_27">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>510</y>
+         <width>481</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/Solvencia.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_17">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>830</y>
+         <width>481</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Llegado a este punto usted ha completado la emisión de una solvencia académica...</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnRegresarMenuGeneral_9">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>900</y>
+         <width>351</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Regresar al Menu Ayuda General</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btnCerrar">
+   <property name="geometry">
+    <rect>
+     <x>434</x>
+     <y>550</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cerrar</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnCerrar</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>353</x>
+     <y>561</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>390</x>
+     <y>-9</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

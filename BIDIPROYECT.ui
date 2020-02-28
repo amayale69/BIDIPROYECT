@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BDPI_Principal</class>
+ <widget class="QMainWindow" name="BDPI_Principal">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1200</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>1110</width>
+    <height>680</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Biblioteca Digital de Proyectos - BIDIPROYECT</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>img/icono_siproyect.jpg</normaloff>img/icono_siproyect.jpg</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#centralwidget {
+ background-color: qconicalgradient(cx:0, cy:1, angle:182.4, 
+           stop:0 rgba(0, 0, 0, 255), 
+           stop:1 rgba(255, 255, 255, 255));
+}
+
+QLabel{
+	color: rgb(0,0,255);
+	font: 75 12px &quot;Verdana&quot;;
+}
+
+QLabel#lblUsuario{
+	color: black;
+	font: 75 12px &quot;Verdana&quot;;
+}
+
+QLabel#lblClave{
+	color: black;
+	font: 75 12px &quot;Verdana&quot;;
+}
+
+QLabel#titulo1{
+	color: blue;
+	font: 75 32px &quot;Lucida Calligraphy&quot;;
+}
+
+QLabel#titulo2{
+	color: red;
+	font: 75 32px &quot;Lucida Calligraphy&quot;;
+}
+
+
+
+QLabel#lblInicioSesion1{
+	color: black;
+	font: 75 12px &quot;Lucida Calligraphy&quot;;
+}
+
+QLabel#lblInicioSesion2{
+	color: black;
+	font: 75 12px &quot;Lucida Calligraphy&quot;;
+}
+
+
+QLabel#lblBienvenidoUsuario1{
+	color: black;
+	font: 75 11px &quot;Lucida Calligraphy&quot;;
+}
+
+QLabel#lblBienvenidoUsuario2{
+	color: black;
+	font: 75 11px &quot;Lucida Calligraphy&quot;;
+}
+
+
+QMenuBar{
+	background: lightblue;
+    color: black;
+    border: 0px;
+    font: 75 14px &quot;Verdana&quot;; 
+    padding: 4px;
+    margin: 4px;
+}
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="mensaje1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>500</y>
+      <width>1091</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>msj1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mensaje2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>520</y>
+      <width>1101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>msj2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-10</y>
+      <width>1200</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>img/Membrete-UPTJAA.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="imgfondo">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>50</y>
+      <width>1200</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1200</width>
+      <height>491</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>img/Fondo_Pantalla_Principal.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtUsuarioActivo">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>60</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtResponsable">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>60</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblInicioSesion1">
+    <property name="geometry">
+     <rect>
+      <x>992</x>
+      <y>180</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Inicio de Sesion</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblInicioSesion2">
+    <property name="geometry">
+     <rect>
+      <x>992</x>
+      <y>194</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Administrador</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblUsuario">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>220</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Usuario:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtUsuario">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>243</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Introduzca su usuario</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtClave">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>290</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Introduzca su clave</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblClave">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>267</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clave:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAcceder">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>320</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Acceder</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tabla_proyectos_recientes">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>250</y>
+      <width>771</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>Proyecto</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Trayecto</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Titulo</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Metodologia</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Tipo Desarrollo</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Año</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>ID Trayecto</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>ID Proyecto</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>470</y>
+      <width>351</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Haga doble click en el  proyecto  reciente  a consultar</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblBienvenidoUsuario1">
+    <property name="geometry">
+     <rect>
+      <x>992</x>
+      <y>187</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Bienvenido, usuario:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblBienvenidoUsuario2">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>205</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&quot;USUARIO&quot;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSalir">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>320</y>
+      <width>50</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Salir</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtProyectoSeleccionado">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>510</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>635</x>
+      <y>193</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Buscar:</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="grpFiltrarPor">
+    <property name="geometry">
+     <rect>
+      <x>111</x>
+      <y>217</y>
+      <width>501</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QRadioButton" name="optTitulo">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>7</y>
+       <width>71</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Titulo</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="optProyecto">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>7</y>
+       <width>61</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Proyecto</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="optTrayecto">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>7</y>
+       <width>71</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Trayecto</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="optMetodo">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>7</y>
+       <width>81</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Metodologia</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="optTDesarrollo">
+     <property name="geometry">
+      <rect>
+       <x>397</x>
+       <y>8</y>
+       <width>81</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>T. Desarrollo</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLineEdit" name="txtFiltro">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>193</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtClavecod">
+    <property name="geometry">
+     <rect>
+      <x>1070</x>
+      <y>60</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkActivo">
+    <property name="geometry">
+     <rect>
+      <x>1070</x>
+      <y>80</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>activo</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mensaje">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>360</y>
+      <width>211</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>msj</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>imgfondo</zorder>
+   <zorder>mensaje1</zorder>
+   <zorder>mensaje2</zorder>
+   <zorder>label</zorder>
+   <zorder>txtUsuarioActivo</zorder>
+   <zorder>txtResponsable</zorder>
+   <zorder>lblInicioSesion1</zorder>
+   <zorder>lblInicioSesion2</zorder>
+   <zorder>lblUsuario</zorder>
+   <zorder>txtUsuario</zorder>
+   <zorder>txtClave</zorder>
+   <zorder>lblClave</zorder>
+   <zorder>btnAcceder</zorder>
+   <zorder>tabla_proyectos_recientes</zorder>
+   <zorder>label_2</zorder>
+   <zorder>lblBienvenidoUsuario1</zorder>
+   <zorder>lblBienvenidoUsuario2</zorder>
+   <zorder>btnSalir</zorder>
+   <zorder>txtProyectoSeleccionado</zorder>
+   <zorder>label_12</zorder>
+   <zorder>grpFiltrarPor</zorder>
+   <zorder>txtFiltro</zorder>
+   <zorder>txtClavecod</zorder>
+   <zorder>chkActivo</zorder>
+   <zorder>mensaje</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>39</height>
+    </rect>
+   </property>
+   <property name="baseSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="palette">
+    <palette>
+     <active>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>173</red>
+         <green>216</green>
+         <blue>230</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>173</red>
+         <green>216</green>
+         <blue>230</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>173</red>
+         <green>216</green>
+         <blue>230</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>173</red>
+         <green>216</green>
+         <blue>230</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>173</red>
+         <green>216</green>
+         <blue>230</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>173</red>
+         <green>216</green>
+         <blue>230</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>173</red>
+         <green>216</green>
+         <blue>230</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>173</red>
+         <green>216</green>
+         <blue>230</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>173</red>
+         <green>216</green>
+         <blue>230</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>-1</pointsize>
+     <weight>9</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuUsuarios">
+    <property name="geometry">
+     <rect>
+      <x>225</x>
+      <y>162</y>
+      <width>176</width>
+      <height>94</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>Usuarios</string>
+    </property>
+    <addaction name="menu_usuarios_cambio_clave"/>
+    <addaction name="menu_usuarios_registrar_usuarios"/>
+   </widget>
+   <widget class="QMenu" name="menuProyectos">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>Proyectos</string>
+    </property>
+    <addaction name="menu_Control_Proyectos"/>
+   </widget>
+   <widget class="QMenu" name="menuConsultas">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>Consultas</string>
+    </property>
+    <addaction name="menuBiblioteca"/>
+   </widget>
+   <widget class="QMenu" name="menuReportes">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>Reportes</string>
+    </property>
+    <addaction name="menu_reportes_estadisticas"/>
+    <addaction name="menu_reportes_solvencias"/>
+   </widget>
+   <widget class="QMenu" name="menuAyuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="Manual_de_Usuario"/>
+   </widget>
+   <addaction name="menuUsuarios"/>
+   <addaction name="menuProyectos"/>
+   <addaction name="menuConsultas"/>
+   <addaction name="menuReportes"/>
+   <addaction name="menuAyuda"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="menu_archivo_inicio_sesion">
+   <property name="text">
+    <string>Inicio de sesion</string>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="menu_archivo_cerrar_sesion">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Cerrar sesion</string>
+   </property>
+  </action>
+  <action name="menu_archivo_salir">
+   <property name="text">
+    <string>Salir del Sistema</string>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Alt+X</string>
+   </property>
+  </action>
+  <action name="menu_usuarios_cambio_clave">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Cambiar Clave</string>
+   </property>
+   <property name="font">
+    <font/>
+   </property>
+  </action>
+  <action name="menu_Reg_Estudiantes">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Registro de Estudiantes</string>
+   </property>
+  </action>
+  <action name="menu_Reg_Tutores">
+   <property name="text">
+    <string>Registro de Tutores</string>
+   </property>
+  </action>
+  <action name="menu_archivo_registrar_usuario">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Registro de usuarios</string>
+   </property>
+  </action>
+  <action name="actionMetodolog_as">
+   <property name="text">
+    <string>Tipos de Metodologías</string>
+   </property>
+  </action>
+  <action name="actionTipos_de_desarrollo">
+   <property name="text">
+    <string>Tipos de desarrollo</string>
+   </property>
+  </action>
+  <action name="menu_Control_Proyectos">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Recepcion de Proyectos</string>
+   </property>
+  </action>
+  <action name="actionProfesores">
+   <property name="text">
+    <string>Profesores</string>
+   </property>
+  </action>
+  <action name="actionTrayectos_2">
+   <property name="text">
+    <string>Trayectos</string>
+   </property>
+  </action>
+  <action name="actionProyectos">
+   <property name="text">
+    <string>Registrar Proyectos</string>
+   </property>
+  </action>
+  <action name="actionProyectos_por_a_o">
+   <property name="text">
+    <string>Proyectos por año</string>
+   </property>
+  </action>
+  <action name="actionProyectos_por_metodologia">
+   <property name="text">
+    <string>Proyectos por metodologia</string>
+   </property>
+  </action>
+  <action name="actionProyectos_por_alumnos">
+   <property name="text">
+    <string>Proyectos por alumnos</string>
+   </property>
+  </action>
+  <action name="actionProyectos_por_tutores">
+   <property name="text">
+    <string>Proyectos por tutores</string>
+   </property>
+  </action>
+  <action name="actionProyectos_por_trayectos">
+   <property name="text">
+    <string>Proyectos por trayectos</string>
+   </property>
+  </action>
+  <action name="menuBiblioteca">
+   <property name="text">
+    <string>Biblioteca de Proyectos</string>
+   </property>
+  </action>
+  <action name="menu_reportes_estadisticas">
+   <property name="text">
+    <string>Estadística de proyectos por año</string>
+   </property>
+  </action>
+  <action name="menu_reportes_solvencias">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Emisión de solvencias académicas</string>
+   </property>
+  </action>
+  <action name="menu_prueba_progressbar">
+   <property name="text">
+    <string>Progressbar</string>
+   </property>
+  </action>
+  <action name="menu_Reg_Usuarios">
+   <property name="text">
+    <string>Registro de Usuarios</string>
+   </property>
+  </action>
+  <action name="actionEstadisticas_de_Proyectos_por_Metodologias">
+   <property name="text">
+    <string>Estadisticas de Proyectos por Metodologias</string>
+   </property>
+  </action>
+  <action name="actionLista_de_Usuarios">
+   <property name="text">
+    <string>Lista de Usuarios</string>
+   </property>
+  </action>
+  <action name="actionLista_de_Estudiantes_Activos">
+   <property name="text">
+    <string>Lista de Estudiantes Activos</string>
+   </property>
+  </action>
+  <action name="actionLista_de_Tutores">
+   <property name="text">
+    <string>Lista de Tutores</string>
+   </property>
+  </action>
+  <action name="actionLista_de_Tutores_Metodologicos">
+   <property name="text">
+    <string>Lista de Tutores Metodologicos</string>
+   </property>
+  </action>
+  <action name="actionReportes_de_Proyectos_por_Estudiantes">
+   <property name="text">
+    <string>Reportes de Proyectos por Estudiantes</string>
+   </property>
+  </action>
+  <action name="Manual_de_Usuario">
+   <property name="text">
+    <string>Manual de Usuario</string>
+   </property>
+  </action>
+  <action name="menu_usuarios_registrar_usuarios">
+   <property name="text">
+    <string>Registrar de usuarios</string>
+   </property>
+  </action>
+  <action name="actionReporte_de_Proyectos_por_Tutor">
+   <property name="text">
+    <string>Reporte de Proyectos por Tutor</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

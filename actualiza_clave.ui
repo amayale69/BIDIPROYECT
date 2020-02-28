@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>720</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>720</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>720</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::TabFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Registro de Estudiantes</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>img/icono_siproyect.jpg</normaloff>img/icono_siproyect.jpg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QCheckBox {
+    border: 0px;
+    
+}
+
+QLineEdit{
+	border: 1px solid gray;
+    border-raius: 4px;
+	font-size: 14px;
+	height: 30px;
+}
+
+QLabel{
+	color: black;
+	font: 75 14px &quot;Roboto Medium&quot;;
+}
+
+QLabel#lblTituloPantalla{
+	color: darkblue;
+	font: 20px &quot;Cooper Black&quot;;
+}
+
+QGroupBox{
+	color: black;
+	background: lightgray;
+	border: 1px solid gray; 
+	font: 75 14px &quot;Roboto Medium&quot;;
+}
+
+QGroupBox#optGenero{
+	background: white;
+}
+
+QRadioButton{
+	color: black;
+	font: 75 14px &quot;Roboto Medium&quot;;
+}
+
+QToolButton{
+    border: 1px solid;
+    border-radius: 12px;
+	color: white;
+    background: black;
+	border-color: white;
+}
+
+QToolButton:hover{
+	color:black;
+    background-color: orange;
+}
+
+QPushButton{
+	color: black;
+    background: white;
+	border: 1px solid black;
+    border-radius: 12px;
+}
+
+QPushButton#btnGuardar:hover{
+    color: black;
+	background-color: orange;
+}
+
+QPushButton#btnDescartar:hover{
+    color: black;
+	background-color: orange;
+}
+
+QPushButton:hover{
+    color: black;
+	background-color: orange;
+}
+
+QCheckBox{
+	color: black;
+	font: 75 14px &quot;Roboto Medium&quot;;
+}
+
+</string>
+  </property>
+  <widget class="QGroupBox" name="GrupoBotones">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>270</y>
+     <width>311</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QPushButton" name="btnDescartar">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>10</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Descartar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnGuardar">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>10</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Guardar</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>70</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Usuario Activo:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>100</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nombre del Responsable:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="mensaje1">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>340</y>
+     <width>691</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Msj1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTituloPantalla">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>9</y>
+     <width>701</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Actualizacion de Claves</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>721</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>img/Fondo Pantalla Datos.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtUsuario">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>70</y>
+     <width>161</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Ingrese Id de usuario</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtResponsable">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>100</y>
+     <width>321</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Ingrese nombre del responsable</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>130</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Introduzca nueva clave:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtClaveNueva">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>130</y>
+     <width>171</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>160</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Confirme su nueva clave:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtClaveConfirmar">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>160</y>
+     <width>171</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="mensaje2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>360</y>
+     <width>711</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Msj2</string>
+   </property>
+  </widget>
+  <zorder>label_5</zorder>
+  <zorder>GrupoBotones</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>mensaje1</zorder>
+  <zorder>lblTituloPantalla</zorder>
+  <zorder>txtUsuario</zorder>
+  <zorder>txtResponsable</zorder>
+  <zorder>label_3</zorder>
+  <zorder>txtClaveNueva</zorder>
+  <zorder>label_4</zorder>
+  <zorder>txtClaveConfirmar</zorder>
+  <zorder>mensaje2</zorder>
+ </widget>
+ <tabstops>
+  <tabstop>txtUsuario</tabstop>
+  <tabstop>txtResponsable</tabstop>
+  <tabstop>btnGuardar</tabstop>
+  <tabstop>btnDescartar</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
