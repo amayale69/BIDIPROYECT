@@ -202,6 +202,7 @@ class DialogoEstadistica(QDialog):
 		self.optApellido.clicked.connect(self.ordenarTabla)
 		self.txtFiltro.textChanged.connect(self.buscarDato)
 
+	# Rutina para ordenar la lista de tutores
 	def ordenarTabla(self):
 		if self.optCedula.isChecked():
 			self.ListaTutores.horizontalHeader().setSortIndicator(0, Qt.AscendingOrder)
@@ -210,12 +211,16 @@ class DialogoEstadistica(QDialog):
 		else:
 			self.ListaTutores.horizontalHeader().setSortIndicator(2, Qt.AscendingOrder)
 
+	# Rutina para actualizar el campo de busqueda con la cedula del tutor al hacer click en 
+	# un registro de la tabla
 	def actCedulaBuscar(self):
 		fila = self.ListaTutores.currentRow()
 		totalregistros = self.ListaTutores.rowCount()
 		cedula = self.ListaTutores.item(fila, 0).text().replace(" ", "")
 		self.txtCedulaSeleccionada.setText(cedula)
 
+	# Rutina para fijar el cursor de la tabla al ir introduciendo datos en el campo de busqueda de
+	# acuerdo al ordenamiento de la tabla
 	def buscarDato(self):
 		lv_texto = self.txtFiltro.text().upper()
 		if self.optCedula.isChecked()== True:
@@ -246,6 +251,7 @@ class DialogoEstadistica(QDialog):
 			return False
 
 
+	# Rutina para activar los botones de seleccion de busqueda
 	def activa_botones(self):
 		self.grpTipo.setEnabled(True)
 		self.btnReset.setEnabled(False)
@@ -256,6 +262,7 @@ class DialogoEstadistica(QDialog):
 		self.chkTutor.setChecked(False)
 		self.chkPeriodo.setChecked(False)
 
+	# Rutina para desactivar los botones de seleccion de busqueda
 	def desactiva_botones(self):
 		self.grpTipo.setEnabled(False)
 		self.btnReset.setEnabled(True)
@@ -269,6 +276,7 @@ class DialogoEstadistica(QDialog):
 		self.cmbFechafin.setEnabled(False)
 		
 
+	# Rutina para vaciar la tabla para nueva busqueda
 	def resetEstadistica(self):
 		if self.TotalRegistros > 0:
 			self.tablaEstadisticas.clearSelection()
@@ -286,7 +294,7 @@ class DialogoEstadistica(QDialog):
 		self.chkPeriodo.setChecked(False)
 		self.chequeoTutor()
 
-
+	# Rutina para activar o desactivar campos de acuerdo al tipo de estadistica
 	def chequeoTipoEstadistica(self):
 		if self.optDetallado.isChecked():
 			self.tablaEstadisticas.setColumnHidden(3, False)
@@ -299,6 +307,7 @@ class DialogoEstadistica(QDialog):
 			self.tablaEstadisticas.setColumnHidden(5, True)
 			self.tablaEstadisticas.setColumnHidden(6, True)
 
+	# Rutina para activar o desactivar campos de tutor acuerdo seleccion de tutor unico o general
 	def chequeoTutor(self):
 		if self.chkTutor.isChecked():
 			self.txtCedula.setText("0")
@@ -319,6 +328,7 @@ class DialogoEstadistica(QDialog):
 			self.tablaEstadisticas.setColumnHidden(1, False)
 			self.btnBuscarTutor.setEnabled(False)
 
+	# Rutina para hailitar o deshabilitar busqueda por periodo 
 	def chequeoPeriodo(self):
 		if self.chkPeriodo.isChecked():
 			self.grpFechas.setEnabled(True)
@@ -335,6 +345,7 @@ class DialogoEstadistica(QDialog):
 			self.cmbFechaini.setCurrentIndex(int(self.AnoActual)-2013)
 			self.cmbFechafin.setCurrentIndex(int(self.AnoActual)-2013)
 
+	# Rutina para habilitar busqueda por fecha simple o rango de fechas
 	def chequeoGrpFechas(self):
 		if self.optAnual.isChecked():
 			self.cmbFechafin.setEnabled(False)
@@ -345,6 +356,7 @@ class DialogoEstadistica(QDialog):
 			self.cmbFechaini.setCurrentIndex(0)
 			self.cmbFechafin.setCurrentIndex(int(self.AnoActual)-2013)
 
+	# Rutina para cargar la tabla de tutores 
 	def cargaTutores(self):
 		index2 = self.ListaTutores.rowCount()
 		if index2 > 0:
@@ -368,6 +380,7 @@ class DialogoEstadistica(QDialog):
 			self.ListaTutores.setItem(index, 2, QTableWidgetItem(lvapellido))
 			index = index + 1
 
+	# Rutina para extraer los datos de un tutor de la base de datos
 	def consulta_tutor(self,lvcedula):
 		if lvcedula == '0' or lvcedula == '':
 			self.txtTutor=''
@@ -402,6 +415,7 @@ class DialogoEstadistica(QDialog):
 					self.txtCedula.setText("0")
 					self.txtTutor.setText('')
 
+	# Rutina para asignar tutor a la busqueda de estadisticas
 	def AsignaTutor(self):
 		#self.cargaTutores()
 		if self.txtCedula.text()=='' or self.txtCedula.text()=='0':
@@ -412,16 +426,17 @@ class DialogoEstadistica(QDialog):
 			lv_cedula_tutor = int(self.txtCedula.text())
 			self.consulta_tutor(str(lv_cedula_tutor))
 
+	# Rutina para elejir un tutor de la lista de busqueda
 	def ElejirTutor(self):
 		if self.ListaTutores.currentRow() == -1:
 			QMessageBox.information(self,"Base de Datos", "Debe seleccionar un tutor de la lista", QMessageBox.Ok)
 		else:
 			row = self.ListaTutores.currentRow()
-			#self.txtCedula.setText(self.ListaTutores.item(row, 0).text())
 			self.txtCedula.setText(self.txtCedulaSeleccionada.text())
 			self.txtTutor.setText(self.ListaTutores.item(row, 1).text() + " " + self.ListaTutores.item(row, 2).text())
 		self.grpTutores.hide()
 
+	# Rutina para retornar sin elejir tutor de la lista de busqueda
 	def RetornoTutor(self):
 		respuesta = QMessageBox.warning(self,"Base de Datos", "Esta seguro de no elejir ningun tutor?", QMessageBox.Yes | QMessageBox.No)
 		if respuesta == QMessageBox.Yes:
@@ -429,6 +444,7 @@ class DialogoEstadistica(QDialog):
 			self.txtTutor.setText("")
 		self.grpTutores.hide()
 
+	# Rutina para cargar los datos en la tabla de estadistica de acuerdo a la seleccion del usuario
 	def LlenarEstadistica(self):
 		self.desactiva_botones()
 		self.tablaEstadisticas.setRowCount(0)
@@ -571,24 +587,6 @@ class DialogoEstadistica(QDialog):
 			if rows==[]:
 				self.bdvacia = 1
 			else:
-				#0 tray.periodo_academico, 
-				#1 tut.cedula_tutor, 
-				#2 tut.nombre_tutor, 
-				#3 tut.apellido_tutor, 
-				#4 tray.nivel as trayecto, 
-				#5 sec.siglas as seccion, 
-				#6 sec.tipo_seccion, 
-				#7 sec.ano_seccion, 
-				#8 proy.codigo_proyecto, 
-				#9 proy.numero_grupo_proyecto, 
-				#10 proy.titulo_proyecto, 
-				#11 met.descripcion as metodo, 
-				#12 tdes.tipo_desarrollo, 
-				#13 est.cedula_estudiante,  
-				#14 tray.id_trayecto,  
-				#15 sec.id_seccion, 
-				#16 met.id_metodo, 
-				#17 tdes.id_tipo_desarrollo 
 				lv_cedula = str(rows[1])
 				lv_nombre = str(rows[2]) + " " + str(rows[3])
 				lv_ano = str(rows[0])
@@ -724,6 +722,7 @@ class DialogoEstadistica(QDialog):
 			mes_escrito = 'Diciembre'
 		return mes_escrito
 
+	# Rutina para generar el acumulado de la estadistica a imprimir
 	def actualizaTotalesGenerales(self):
 		self.TotalGeneralEstudiantes = self.TotalGeneralEstudiantes + self.TotalEstudiantes
 		self.TotalGeneralProyectos = self.TotalGeneralProyectos + self.TotalProyectos
@@ -732,6 +731,7 @@ class DialogoEstadistica(QDialog):
 		self.TotalGeneralRedes = self.TotalGeneralRedes + self.TotalRedes
 		self.TotalGeneralApps = self.TotalGeneralApps + self.TotalApps
 
+	# Rutina para imprimir linea impresa en el reporte de un registro
 	def imprimeLineaRegistros(self):
 		w, h = letter
 		if self.detallado == 1:
@@ -997,6 +997,9 @@ class DialogoEstadistica(QDialog):
 
 	def cerrar(self):
 		self.close()
+
+
+# Constructor para ejecutar el modulo independiente del programa principal, descarcar para hacer pruebas
 
 #app = QApplication(sys.argv)
 #PEstadistica = DialogoEstadistica()

@@ -1,3 +1,16 @@
+#-------------------------------------------------------------------------------------#
+# Programa: Biblioteca Digital de Proyectos de Informatica                            #
+# Programador: Luis Amaya                                                             #
+# Analistas: Jose Astudillo / josmary Botaban                                         #
+# Producto desarrollado para el PNF de Informatica del UPTJAA Extension El Tigre      #
+# Octubre (2018)                                                                      #
+# Version 1.0                                                                         #
+# Modulo: Actualizacion de Claves                                                     #
+# Descripción: Solicita al usuario la nueva clave y su confirmación para actualizarla #
+#              en la Base de Datos                                                    # 
+#-------------------------------------------------------------------------------------#
+
+# Importacion de librerias del sistema
 import sys, re
 from PyQt5.QtWidgets import QApplication, QDialog, QMessageBox, QTableWidget, QTableWidgetItem, QMainWindow, QAction, QPushButton, QGridLayout, QAbstractItemView, QHeaderView, QMenu, QActionGroup
 from PyQt5 import uic
@@ -66,10 +79,9 @@ class DialogoActClave(QDialog):
 		self.mensaje2.setText("")
 		
 	def cerrar_dialogo(self):
-		#self.limpiar()
 		self.close()
-		#qApp.quit
 
+	# Rutina para actualizar las claves del usuario en la Base de Datos
 	def actualizaRegistro(self):
 		if self.txtClaveNueva.text() != '':
 			self.ClaveNueva = self.txtClaveNueva.text().upper()
@@ -77,8 +89,6 @@ class DialogoActClave(QDialog):
 			self.usuario = self.txtUsuario.text()
 			self.Responsable = self.txtResponsable.text()
 			self.ClaveCodificada = hashlib.sha256(bytes(self.ClaveNueva,'utf-8')).hexdigest()
-			#self.mensaje1.setText("Clave codificada es: " + self.ClaveCodificada)
-			#self.mensaje2.setText("Usuario es: " + self.usuario)
 			if self.ClaveNueva == self.ClaveConfirmar:
 				actualiza_registro = "UPDATE usuarios SET clave = '%s' where usuario='%s'" % (self.ClaveCodificada, self.usuario)
 				self.cursor.execute(actualiza_registro)
@@ -89,6 +99,7 @@ class DialogoActClave(QDialog):
 		else:
 			QMessageBox.warning(self, "Error..", "La clave no puede estar vacia. Introduzca una clave aceptable no menor de 4 digitos", QMessageBox.Ok)
 
+	# Rutina que valida los caracteres que conforman la clave y su tamaño en caracteres
 	def validar_clave(self):
 		self.ClaveNueva = self.txtClaveNueva.text().upper()
 		validar = re.match('^[a-zA-Z0-9\sáéíóúàèìòùäëïöüñ]+$', self.ClaveNueva, re.I)
@@ -104,6 +115,7 @@ class DialogoActClave(QDialog):
 			self.txtClaveNueva.setStyleSheet("border: 1px solid green;")
 			return True
 
+	# Rutina valida la clave de verificacion
 	def validar_clave2(self):
 		self.ClaveConfirmar = self.txtClaveConfirmar.text().upper()
 		validar = re.match('^[a-zA-Z0-9\sáéíóúàèìòùäëïöüñ]+$', self.ClaveConfirmar, re.I)
@@ -119,9 +131,10 @@ class DialogoActClave(QDialog):
 			self.txtClaveConfirmar.setStyleSheet("border: 1px solid green;")
 			return True
 
+# Constructor para ejecutar el modulo independiente del programa principal, descarcar para hacer pruebas
 
 #app = QApplication(sys.argv)
-#PActualizaClave = DialogoActClave()
-#PActualizaClave.show()
+#PActClave = DialogoActClave()
+#PActClave.show()
 #app.exec_()
 

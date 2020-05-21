@@ -513,6 +513,7 @@ class BDPIApp(QMainWindow, DialogoAyuda, DialogoActClave, DialogoRegUsuarios, Di
         self.hide()
         self.PControlProyectos.setEnabled(True)
         self.PControlProyectos.exec_()
+        self.llenarTablaRecientes()
         self.show()
 
     def manualAyuda(self):

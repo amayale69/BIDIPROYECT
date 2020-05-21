@@ -1,3 +1,15 @@
+#-----------------------------------------------------------------------------------#
+# Programa: Biblioteca Digital de Proyectos de Informatica                          #
+# Programador: Luis Amaya                                                           #
+# Analistas: Jose Astudillo / josmary Botaban                                       #
+# Producto desarrollado para el PNF de Informatica del UPTJAA Extension El Tigre    #
+# Octubre (2018)                                                                    #
+# Version 1.0                                                                       #
+# Modulo: Manual de Ayuda en Linea                                                  #
+# Descripción: Abre una ventana de ayuda con la informacion de como usar el sistema #
+#-----------------------------------------------------------------------------------#
+
+# Importacion de librerias del sistema
 import sys, re
 from PyQt5.QtWidgets import QApplication, QDialog, QMessageBox, QTableWidget, QTableWidgetItem, QMainWindow, QAction, QPushButton, QGridLayout, QAbstractItemView, QHeaderView, QMenu, QActionGroup
 from PyQt5 import uic
@@ -16,9 +28,8 @@ class DialogoAyuda(QDialog):
 		uic.loadUi("manualSistema.ui", self)
 		self.setEnabled(True)
 		#Colocar titulo de la pantalla
-		self.setWindowTitle("SIPROYECT - Manual del Sistema")
+		self.setWindowTitle("SIPROYECT - Manual de Ayuda Rapida del Usuario")
 		self.setWindowFlags(Qt.WindowMinimizeButtonHint | Qt.WindowCloseButtonHint | Qt.MSWindowsFixedSizeDialogHint)
-		#self.lblTituloPantalla.setText("Registro de Estudiantes")
 		#Operacion para centrar la ventana en la pantalla
 		resolucion = ctypes.windll.user32
 		resolucion_ancho = resolucion.GetSystemMetrics(0)
@@ -27,9 +38,6 @@ class DialogoAyuda(QDialog):
 		top = (resolucion_alto / 2) - (self.frameSize().height() / 2)
 		self.move(left, top)
 
-		#Vincular eventos de click de los botones a las funciones correspondientes
-		
-#		self.btnCerrar.clicked.connect(self.cerrar_dialogo)
 		self.btnAyudaPublico.clicked.connect(self.AyudaPublico)
 		self.btnAyudaProyectoRecientes.clicked.connect(self.ProyectoReciente)
 		self.btnProyectoRecientes.clicked.connect(self.ProyectoReciente)
@@ -163,6 +171,8 @@ class DialogoAyuda(QDialog):
 	def cerrar_dialogo(self):
 		self.close()
 
+
+# Constructor para ejecutar el modulo independiente del programa principal, descarcar para hacer pruebas
 
 #app = QApplication(sys.argv)
 #PAyuda = DialogoAyuda()

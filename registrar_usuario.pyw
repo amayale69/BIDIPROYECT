@@ -110,6 +110,9 @@ class DialogoRegUsuarios(QDialog):
 		self.tabla_usuarios.itemClicked.connect(self.actContadorActual)
 		self.tabla_usuarios.itemDoubleClicked.connect(self.editarRegistro)
 
+		#Crear disparador de evento para buscar datos en la tabla por texto introducido por usuario
+		self.txtFiltro.textChanged.connect(self.buscarDatoUsuario) 
+
 
 		#Ocultar el campo de control de total de registros
 		self.totalRegistros.hide()
@@ -130,6 +133,8 @@ class DialogoRegUsuarios(QDialog):
 		self.estado = 0
 		self.encontrar = False
 
+		#Cargar Matriz de Datos
+		self.consultarTabla()
 		#Iniciar valores de variables de control de registros
 		self.evento = "Inicio"
 		if self.modo == 2:
@@ -315,63 +320,60 @@ class DialogoRegUsuarios(QDialog):
 		self.txtUsuarioSeleccionado.setText(self.tabla_usuarios.item(fila, 0).text())
 
 	def guardarRegistro(self):
-		if self.txtUsuario.text() != '':
-			self.estado = 0
-			self.Usuario_Nuevo = self.txtUsuario.text().upper()
-			self.responsable = self.txtResponsable.text().upper()
-			self.txtUsuario.setText(self.Usuario_Nuevo)
-			self.txtResponsable.setText(self.responsable)
-			if self.modo == 0:
-				self.contador_registros.setText(str(self.proximo_registro))
-				self.totalRegistros.setText(str(self.proximo_registro))
-				self.buscarUsuario(self.Usuario_Nuevo)
-				if self.encontrar == True:
-					QMessageBox.warning(self,"Base de Datos", "El usuario a registrar ya esta existe previamente...", QMessageBox.Ok)
-					self.txtUsuario.setText(self.usuario_Original)
-					self.estado = 1
-				else:
-					self.agregarRegistro()
-					QMessageBox.information(self,"Base de Datos", "El registro fue agregado exitosamente...Clave Temporal: 'TEMPORAL'", QMessageBox.Ok)
-					self.estado = 0
-					self.mensaje1.setText("")
-					self.btnEstado.setEnabled(True)
-					self.btnReinicioClave.setEnabled(True)
-					self.consultarTabla()
-					#Deshabilita Tab Registro
-					self.tabWidget.setTabEnabled(0, False)
-					#Habilitar Tab Lista
-					self.tabWidget.setTabEnabled(1, True)
+		self.estado = 0
+		self.Usuario_Nuevo = self.txtUsuario.text().upper()
+		self.responsable = self.txtResponsable.text().upper()
+		self.txtUsuario.setText(self.Usuario_Nuevo)
+		self.txtResponsable.setText(self.responsable)
+		if self.modo == 0:
+			self.contador_registros.setText(str(self.proximo_registro))
+			self.totalRegistros.setText(str(self.proximo_registro))
+			self.buscarUsuario(self.Usuario_Nuevo)
+			if self.encontrar == True:
+				QMessageBox.warning(self,"Base de Datos", "El usuario a registrar ya esta existe previamente...", QMessageBox.Ok)
+				self.txtUsuario.setText(self.usuario_Original)
+				self.estado = 1
 			else:
-				if self.usuario_Original == self.txtUsuario.text():
-					self.actualizaRegistro(self.usuario_Original, self.usuario_Original,False)
-					QMessageBox.information(self,"Base de Datos", "El registro fue actualizado exitosamente...", QMessageBox.Ok)
-					self.estado = 0
-					self.mensaje1.setText("")
-					#Deshabilita Tab Registro
-					self.tabWidget.setTabEnabled(0, False)
-					#Habilitar Tab Lista
-					self.tabWidget.setTabEnabled(1, True)
-				else:
-					respuesta=QMessageBox.warning(self,"Adventencia", "Esta seguro de cambiar usuario: " + self.usuario_Original + " por el usuario: " + self.txtUsuario.text(), QMessageBox.Yes | QMessageBox.No)
-					if respuesta == QMessageBox.Yes:
-						self.buscarUsuario(self.Usuario_Nuevo)
-						if self.encontrar == False:
-							self.actualizaRegistro(self.Usuario_Nuevo, self.usuario_Original,True)
-							QMessageBox.information(self,"Base de Datos", "El registro fue actualizado exitosamente...", QMessageBox.Ok)
-							self.estado = 2
-							#Deshabilita Tab Registro
-							self.tabWidget.setTabEnabled(0, False)
-							#Habilitar Tab Lista
-							self.tabWidget.setTabEnabled(1, True)
-						else:
-							QMessageBox.warning(self,"Base de Datos", "El usuario a registrar ya existe en sistema...", QMessageBox.Ok)
-							self.txtUsuario.setText(self.usuario_Original)
-							self.estado = 1
+				self.agregarRegistro()
+				QMessageBox.information(self,"Base de Datos", "El registro fue agregado exitosamente...Clave Temporal: 'TEMPORAL'", QMessageBox.Ok)
+				self.estado = 0
+				self.mensaje1.setText("")
+				self.btnEstado.setEnabled(True)
+				self.btnReinicioClave.setEnabled(True)
+				self.consultarTabla()
+				#Deshabilita Tab Registro
+				self.tabWidget.setTabEnabled(0, False)
+				#Habilitar Tab Lista
+				self.tabWidget.setTabEnabled(1, True)
+		else:
+			if self.usuario_Original == self.txtUsuario.text():
+				self.actualizaRegistro(self.usuario_Original, self.usuario_Original,False)
+				QMessageBox.information(self,"Base de Datos", "El registro fue actualizado exitosamente...", QMessageBox.Ok)
+				self.estado = 0
+				self.mensaje1.setText("")
+				#Deshabilita Tab Registro
+				self.tabWidget.setTabEnabled(0, False)
+				#Habilitar Tab Lista
+				self.tabWidget.setTabEnabled(1, True)
+			else:
+				respuesta=QMessageBox.warning(self,"Adventencia", "Esta seguro de cambiar usuario: " + self.usuario_Original + " por el usuario: " + self.txtUsuario.text(), QMessageBox.Yes | QMessageBox.No)
+				if respuesta == QMessageBox.Yes:
+					self.buscarUsuario(self.Usuario_Nuevo)
+					if self.encontrar == False:
+						self.actualizaRegistro(self.Usuario_Nuevo, self.usuario_Original,True)
+						QMessageBox.information(self,"Base de Datos", "El registro fue actualizado exitosamente...", QMessageBox.Ok)
+						self.estado = 2
+						#Deshabilita Tab Registro
+						self.tabWidget.setTabEnabled(0, False)
+						#Habilitar Tab Lista
+						self.tabWidget.setTabEnabled(1, True)
 					else:
+						QMessageBox.warning(self,"Base de Datos", "El usuario a registrar ya existe en sistema...", QMessageBox.Ok)
 						self.txtUsuario.setText(self.usuario_Original)
 						self.estado = 1
-		else:
-			QMessageBox.warning(self,"Base de Datos", "No puede guardar usuario <vacio>...", QMessageBox.Ok)
+				else:
+					self.txtUsuario.setText(self.usuario_Original)
+					self.estado = 1
 
 	def cambiarEstado(self):
 		fila = self.tabla_usuarios.currentRow()
@@ -426,6 +428,32 @@ class DialogoRegUsuarios(QDialog):
 			self.tabla_usuarios.horizontalHeader().setSortIndicator(0, Qt.AscendingOrder)
 		else:
 			self.tabla_usuarios.horizontalHeader().setSortIndicator(1, Qt.AscendingOrder)
+
+	def buscarDatoUsuario(self):
+		lv_texto = self.txtFiltro.text().upper()
+		validar = re.match('^[a-zA-Z0-9\sáéíóúàèìòùäëïöüñ]+$', lv_texto, re.I)
+		if self.optUsuario.isChecked()== True:
+			columna = 0
+		else:
+			columna = 1
+		index = self.tabla_usuarios.rowCount()
+		fila=0
+		encontrar = 0
+		while fila < index:
+			lv_busqueda = self.tabla_usuarios.item(fila,columna).text()
+			if lv_texto in lv_busqueda:
+				encontrar = 1
+				break;
+			fila = fila + 1
+		if encontrar == 1:
+			posicion = self.tabla_usuarios.item(fila, columna)
+			self.tabla_usuarios.scrollToItem(posicion)
+			self.tabla_usuarios.setCurrentCell(fila, columna)
+			self.txtUsuarioSeleccionado.setText(self.tabla_usuarios.item(fila, 0).text())
+			return True
+		else:
+			return False
+
 
 #	def eliminarRegistro(self):
 #		if self.txtUsuario.text() == "ADMIN":

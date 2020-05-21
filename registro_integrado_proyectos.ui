@@ -2320,11 +2320,132 @@ QCheckBox{
        <string>Seleccionar Metodologia</string>
       </property>
      </widget>
+     <widget class="QGroupBox" name="grpMetodos">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>130</y>
+        <width>311</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Metodologias</string>
+      </property>
+      <widget class="QTableWidget" name="tabla_metodos">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>291</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>Metodologia</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Id Metodo</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLineEdit" name="txtMetodoNuevo">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>251</y>
+         <width>231</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="maxLength">
+        <number>40</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>210</y>
+         <width>241</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Doble Click para Seleccionar</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>230</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Metodologia:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnActualizaMetodo">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>280</y>
+         <width>81</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Actualizar</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnAgregarMetodo">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>280</y>
+         <width>91</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Agregar Nuevo</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txtIdMetodoSeleccionado">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>280</y>
+         <width>31</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnElejirMetodo">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>250</y>
+         <width>51</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Elegir</string>
+       </property>
+      </widget>
+     </widget>
      <widget class="QGroupBox" name="grpTDesarrollo">
       <property name="geometry">
        <rect>
-        <x>710</x>
-        <y>120</y>
+        <x>650</x>
+        <y>130</y>
         <width>311</width>
         <height>311</height>
        </rect>
@@ -2441,124 +2562,677 @@ QCheckBox{
        </property>
       </widget>
      </widget>
-     <widget class="QGroupBox" name="grpMetodos">
+     <widget class="QGroupBox" name="grpPersonas">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>120</y>
-        <width>311</width>
-        <height>311</height>
+        <x>400</x>
+        <y>0</y>
+        <width>631</width>
+        <height>531</height>
        </rect>
       </property>
       <property name="title">
-       <string>Metodologias</string>
+       <string/>
       </property>
-      <widget class="QTableWidget" name="tabla_metodos">
+      <widget class="QTabWidget" name="tabPersonas">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>291</width>
-         <height>191</height>
+         <x>15</x>
+         <y>40</y>
+         <width>601</width>
+         <height>471</height>
         </rect>
        </property>
-       <column>
-        <property name="text">
-         <string>Metodologia</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Id Metodo</string>
-        </property>
-       </column>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="Lista">
+        <attribute name="title">
+         <string>Lista</string>
+        </attribute>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="geometry">
+          <rect>
+           <x>-1</x>
+           <y>0</y>
+           <width>601</width>
+           <height>451</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <widget class="QTableWidget" name="tabla_personas">
+          <property name="geometry">
+           <rect>
+            <x>12</x>
+            <y>30</y>
+            <width>571</width>
+            <height>271</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>Cedula</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nombre</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Apellido</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Telefono</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Estado</string>
+           </property>
+          </column>
+         </widget>
+         <widget class="QPushButton" name="btnSelPersona">
+          <property name="geometry">
+           <rect>
+            <x>420</x>
+            <y>390</y>
+            <width>75</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Seleccionar</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnRetorno">
+          <property name="geometry">
+           <rect>
+            <x>506</x>
+            <y>390</y>
+            <width>75</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Retornar</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_13">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>390</y>
+            <width>51</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Buscar:</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txtFiltroPersonas">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>390</y>
+            <width>141</width>
+            <height>20</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="grpFiltrarPersonas">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>330</y>
+            <width>261</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Filtrar por:</string>
+          </property>
+          <widget class="QRadioButton" name="optApellido">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>20</y>
+             <width>71</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Apellido</string>
+           </property>
+          </widget>
+          <widget class="QRadioButton" name="optCedula">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>61</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Cedula</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QRadioButton" name="optNombre">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>20</y>
+             <width>71</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Nombre</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="label_23">
+          <property name="geometry">
+           <rect>
+            <x>13</x>
+            <y>300</y>
+            <width>501</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Haga doble click en el tutor a seleccionar o elija un registro y pulse seleccionar ...</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnNuevoRegistro">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>390</y>
+            <width>91</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="text">
+           <string>Nuevo Registro</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnEditarRegistro">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>390</y>
+            <width>91</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="text">
+           <string>Editar Registro</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="Datos">
+        <attribute name="title">
+         <string>Datos</string>
+        </attribute>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>601</width>
+           <height>451</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <widget class="QLineEdit" name="txtNombre">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>44</y>
+            <width>211</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="inputMethodHints">
+           <set>Qt::ImhNone</set>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="maxLength">
+           <number>30</number>
+          </property>
+          <property name="placeholderText">
+           <string>Introduzca nombre del estudiante</string>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="GrupoBotones_2">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>274</y>
+            <width>351</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <widget class="QPushButton" name="btnRegresar">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>10</y>
+             <width>75</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>Volver Lista</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnDescartarPersonas">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>10</y>
+             <width>75</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>Descartar</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnGuardarPersonas">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>10</y>
+             <width>75</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>Guardar</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="label_6">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>14</y>
+            <width>141</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cedula del Estudiante:</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txtCedula">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>150</x>
+            <y>14</y>
+            <width>81</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="inputMask">
+           <string>99999999</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="maxLength">
+           <number>8</number>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Normal</enum>
+          </property>
+          <property name="cursorPosition">
+           <number>8</number>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="placeholderText">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_9">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>80</y>
+            <width>151</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Teléfono de Contacto:</string>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="grpEstado">
+          <property name="geometry">
+           <rect>
+            <x>460</x>
+            <y>76</y>
+            <width>120</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Estado</string>
+          </property>
+          <widget class="QPushButton" name="btnEstado">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>16</x>
+             <y>30</y>
+             <width>91</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>Inactivo</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="label_10">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>44</y>
+            <width>61</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Nombre:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_11">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>44</y>
+            <width>61</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Apellido:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_19">
+          <property name="geometry">
+           <rect>
+            <x>460</x>
+            <y>140</y>
+            <width>121</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Pulse para cambiar Estado</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="optGenero">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>80</y>
+            <width>101</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Genero</string>
+          </property>
+          <widget class="QRadioButton" name="optFemenino">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>40</y>
+             <width>82</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Femenino</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QRadioButton" name="optMasculino">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>82</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Masculino</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QLineEdit" name="txtApellido">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>44</y>
+            <width>211</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="maxLength">
+           <number>30</number>
+          </property>
+          <property name="placeholderText">
+           <string>Introduzca apellido del estudiante</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="contador_registros">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>250</x>
+            <y>354</y>
+            <width>91</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txtTelefono">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>280</x>
+            <y>80</y>
+            <width>131</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="inputMask">
+           <string>(9999) 999-99-99</string>
+          </property>
+          <property name="text">
+           <string>() --</string>
+          </property>
+          <property name="maxLength">
+           <number>16</number>
+          </property>
+          <property name="placeholderText">
+           <string>Indique teléfono </string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
       </widget>
-      <widget class="QLineEdit" name="txtMetodoNuevo">
+      <widget class="QLabel" name="lblTituloPersonas">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>251</y>
-         <width>231</width>
+         <x>0</x>
+         <y>9</y>
+         <width>601</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Datos de Estudiantes</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="RegActual">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>10</y>
+         <width>41</width>
          <height>20</height>
         </rect>
        </property>
-       <property name="maxLength">
-        <number>40</number>
-       </property>
       </widget>
-      <widget class="QLabel" name="label_20">
+      <widget class="QLineEdit" name="TotalRegPersonas">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>210</y>
-         <width>241</width>
-         <height>21</height>
+         <x>110</x>
+         <y>10</y>
+         <width>41</width>
+         <height>20</height>
         </rect>
        </property>
-       <property name="text">
-        <string>Doble Click para Seleccionar</string>
-       </property>
       </widget>
-      <widget class="QLabel" name="label_21">
+      <widget class="QLineEdit" name="txtCedulaSeleccionada">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>230</y>
-         <width>101</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Metodologia:</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btnActualizaMetodo">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>280</y>
-         <width>81</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Actualizar</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btnAgregarMetodo">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>280</y>
-         <width>91</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Agregar Nuevo</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="txtIdMetodoSeleccionado">
-       <property name="geometry">
-        <rect>
-         <x>210</x>
-         <y>280</y>
+         <x>20</x>
+         <y>10</y>
          <width>31</width>
          <height>20</height>
         </rect>
        </property>
-      </widget>
-      <widget class="QPushButton" name="btnElejirMetodo">
-       <property name="geometry">
-        <rect>
-         <x>250</x>
-         <y>250</y>
-         <width>51</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Elegir</string>
+       <property name="maxLength">
+        <number>8</number>
        </property>
       </widget>
      </widget>
@@ -2955,680 +3629,6 @@ QCheckBox{
       </property>
      </item>
     </widget>
-    <widget class="QGroupBox" name="grpPersonas">
-     <property name="geometry">
-      <rect>
-       <x>440</x>
-       <y>37</y>
-       <width>631</width>
-       <height>531</height>
-      </rect>
-     </property>
-     <property name="title">
-      <string/>
-     </property>
-     <widget class="QTabWidget" name="tabPersonas">
-      <property name="geometry">
-       <rect>
-        <x>15</x>
-        <y>40</y>
-        <width>601</width>
-        <height>471</height>
-       </rect>
-      </property>
-      <property name="currentIndex">
-       <number>1</number>
-      </property>
-      <widget class="QWidget" name="Lista">
-       <attribute name="title">
-        <string>Lista</string>
-       </attribute>
-       <widget class="QGroupBox" name="groupBox">
-        <property name="geometry">
-         <rect>
-          <x>-1</x>
-          <y>0</y>
-          <width>601</width>
-          <height>451</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string/>
-        </property>
-        <widget class="QTableWidget" name="tabla_personas">
-         <property name="geometry">
-          <rect>
-           <x>12</x>
-           <y>30</y>
-           <width>571</width>
-           <height>271</height>
-          </rect>
-         </property>
-         <column>
-          <property name="text">
-           <string>Cedula</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Nombre</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Apellido</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Telefono</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Estado</string>
-          </property>
-         </column>
-        </widget>
-        <widget class="QPushButton" name="btnSelPersona">
-         <property name="geometry">
-          <rect>
-           <x>420</x>
-           <y>390</y>
-           <width>75</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Seleccionar</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="btnRetorno">
-         <property name="geometry">
-          <rect>
-           <x>506</x>
-           <y>390</y>
-           <width>75</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Retornar</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_13">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>390</y>
-           <width>51</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Buscar:</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="txtFiltroPersonas">
-         <property name="geometry">
-          <rect>
-           <x>70</x>
-           <y>390</y>
-           <width>141</width>
-           <height>20</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QGroupBox" name="grpFiltrarPersonas">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>330</y>
-           <width>261</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>Filtrar por:</string>
-         </property>
-         <widget class="QRadioButton" name="optApellido">
-          <property name="geometry">
-           <rect>
-            <x>160</x>
-            <y>20</y>
-            <width>71</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Apellido</string>
-          </property>
-         </widget>
-         <widget class="QRadioButton" name="optCedula">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>61</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Cedula</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QRadioButton" name="optNombre">
-          <property name="geometry">
-           <rect>
-            <x>80</x>
-            <y>20</y>
-            <width>71</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Nombre</string>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QLabel" name="label_23">
-         <property name="geometry">
-          <rect>
-           <x>13</x>
-           <y>300</y>
-           <width>501</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Haga doble click en el tutor a seleccionar o elija un registro y pulse seleccionar ...</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignJustify|Qt::AlignVCenter</set>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="btnNuevoRegistro">
-         <property name="geometry">
-          <rect>
-           <x>220</x>
-           <y>390</y>
-           <width>91</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Nuevo Registro</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="btnEditarRegistro">
-         <property name="geometry">
-          <rect>
-           <x>320</x>
-           <y>390</y>
-           <width>91</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Editar Registro</string>
-         </property>
-        </widget>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="Datos">
-       <attribute name="title">
-        <string>Datos</string>
-       </attribute>
-       <widget class="QGroupBox" name="groupBox_2">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>601</width>
-          <height>451</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string/>
-        </property>
-        <widget class="QLineEdit" name="txtNombre">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>80</x>
-           <y>44</y>
-           <width>201</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="inputMethodHints">
-          <set>Qt::ImhNone</set>
-         </property>
-         <property name="inputMask">
-          <string/>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="maxLength">
-          <number>30</number>
-         </property>
-         <property name="placeholderText">
-          <string>Introduzca nombres</string>
-         </property>
-        </widget>
-        <widget class="QGroupBox" name="GrupoBotones_2">
-         <property name="geometry">
-          <rect>
-           <x>120</x>
-           <y>274</y>
-           <width>351</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string/>
-         </property>
-         <widget class="QPushButton" name="btnRegresar">
-          <property name="geometry">
-           <rect>
-            <x>240</x>
-            <y>10</y>
-            <width>75</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="text">
-           <string>Volver Lista</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="btnDescartarPersonas">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="geometry">
-           <rect>
-            <x>140</x>
-            <y>10</y>
-            <width>75</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="text">
-           <string>Descartar</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="btnGuardarPersonas">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="geometry">
-           <rect>
-            <x>30</x>
-            <y>10</y>
-            <width>75</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="text">
-           <string>Guardar</string>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QLabel" name="lblCedPersona">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>14</y>
-           <width>141</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Cedula del Estudiante:</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="txtCedula">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>150</x>
-           <y>14</y>
-           <width>81</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::StrongFocus</enum>
-         </property>
-         <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
-         </property>
-         <property name="inputMask">
-          <string>99999999</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="maxLength">
-          <number>8</number>
-         </property>
-         <property name="echoMode">
-          <enum>QLineEdit::Normal</enum>
-         </property>
-         <property name="cursorPosition">
-          <number>8</number>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-         <property name="placeholderText">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_9">
-         <property name="geometry">
-          <rect>
-           <x>130</x>
-           <y>80</y>
-           <width>151</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Teléfono de Contacto:</string>
-         </property>
-        </widget>
-        <widget class="QGroupBox" name="grpEstado">
-         <property name="geometry">
-          <rect>
-           <x>460</x>
-           <y>76</y>
-           <width>120</width>
-           <height>61</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>Estado</string>
-         </property>
-         <widget class="QPushButton" name="btnEstado">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="geometry">
-           <rect>
-            <x>16</x>
-            <y>30</y>
-            <width>91</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="text">
-           <string>Inactivo</string>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QLabel" name="label_10">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>44</y>
-           <width>61</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Nombres:</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_11">
-         <property name="geometry">
-          <rect>
-           <x>310</x>
-           <y>44</y>
-           <width>61</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Apellidos:</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_19">
-         <property name="geometry">
-          <rect>
-           <x>460</x>
-           <y>140</y>
-           <width>121</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Pulse para cambiar Estado</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-        <widget class="QGroupBox" name="optGenero">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>80</y>
-           <width>101</width>
-           <height>71</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>Genero</string>
-         </property>
-         <widget class="QRadioButton" name="optFemenino">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>40</y>
-            <width>82</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Femenino</string>
-          </property>
-          <property name="checked">
-           <bool>false</bool>
-          </property>
-         </widget>
-         <widget class="QRadioButton" name="optMasculino">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>82</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Masculino</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QLineEdit" name="txtApellido">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>370</x>
-           <y>44</y>
-           <width>211</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="inputMask">
-          <string/>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="maxLength">
-          <number>30</number>
-         </property>
-         <property name="placeholderText">
-          <string>Introduzca apellidos</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="contador_registros">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>250</x>
-           <y>354</y>
-           <width>91</width>
-           <height>32</height>
-          </rect>
-         </property>
-         <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="txtTelefono">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>280</x>
-           <y>80</y>
-           <width>131</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="inputMask">
-          <string>(9999) 999-99-99</string>
-         </property>
-         <property name="text">
-          <string>() --</string>
-         </property>
-         <property name="maxLength">
-          <number>16</number>
-         </property>
-         <property name="placeholderText">
-          <string>Indique teléfono </string>
-         </property>
-        </widget>
-       </widget>
-      </widget>
-     </widget>
-     <widget class="QLabel" name="lblTituloPersonas">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>9</y>
-        <width>601</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Datos de Estudiantes</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="RegActual">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>10</y>
-        <width>41</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="TotalRegPersonas">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>10</y>
-        <width>41</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="txtCedulaSeleccionada">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>31</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="maxLength">
-       <number>8</number>
-      </property>
-     </widget>
-    </widget>
     <zorder>label_34</zorder>
     <zorder>lblProyectos</zorder>
     <zorder>GrupoBotones_3</zorder>
@@ -3649,15 +3649,17 @@ QCheckBox{
     <zorder>txtIdTipoDesarrollo</zorder>
     <zorder>cmbTipoDesarrollo</zorder>
     <zorder>cmbMetotologia</zorder>
-    <zorder>grpPersonas</zorder>
    </widget>
   </widget>
  </widget>
  <tabstops>
+  <tabstop>txtAnoPeriodo</tabstop>
+  <tabstop>cmbTrayecto</tabstop>
   <tabstop>optRegular</tabstop>
   <tabstop>optProsecucion</tabstop>
   <tabstop>txtLimiteEstudiantes</tabstop>
   <tabstop>cmbSeccion</tabstop>
+  <tabstop>txtAnoProsecucion</tabstop>
   <tabstop>btnRegProyecto</tabstop>
   <tabstop>tabla_seccion_grupos_proyectos</tabstop>
   <tabstop>txtIdPeriodo</tabstop>
@@ -3681,16 +3683,12 @@ QCheckBox{
   <tabstop>tabWidget</tabstop>
   <tabstop>txtAnoPeriodo_2</tabstop>
   <tabstop>cmbTrayecto_2</tabstop>
-  <tabstop>txtCodigoProyecto</tabstop>
-  <tabstop>btnImprimeFicha</tabstop>
   <tabstop>optRegular_2</tabstop>
   <tabstop>optProsecucion_2</tabstop>
   <tabstop>cmbSeccion_2</tabstop>
   <tabstop>txtAnoProsecucion_2</tabstop>
   <tabstop>txtTituloProyecto</tabstop>
   <tabstop>cmbGrupoDesarrollo</tabstop>
-  <tabstop>btnMetodologia</tabstop>
-  <tabstop>btnTipoDesarrollo</tabstop>
   <tabstop>cmbMetotologia</tabstop>
   <tabstop>cmbTipoDesarrollo</tabstop>
   <tabstop>txtEstadoInforme</tabstop>
@@ -3706,7 +3704,6 @@ QCheckBox{
   <tabstop>txtCedulaEstudiante</tabstop>
   <tabstop>btnAgregarIntegrante</tabstop>
   <tabstop>btnRemoverIntegrante</tabstop>
-  <tabstop>btnListaEstudiante</tabstop>
   <tabstop>btnGuardar</tabstop>
   <tabstop>btnDescartarProyecto</tabstop>
   <tabstop>btnCerrarProyectos</tabstop>
@@ -3719,65 +3716,6 @@ QCheckBox{
   <tabstop>btnProyectoSiguiente</tabstop>
   <tabstop>btnUltimoProyecto</tabstop>
   <tabstop>txtTotalProyectos</tabstop>
-  <tabstop>tabPersonas</tabstop>
-  <tabstop>RegActual</tabstop>
-  <tabstop>TotalRegPersonas</tabstop>
-  <tabstop>txtCedulaSeleccionada</tabstop>
-  <tabstop>tabla_tdesarrollo</tabstop>
-  <tabstop>txtTipoDesarrolloNuevo</tabstop>
-  <tabstop>btnElejirTipoDesarrollo</tabstop>
-  <tabstop>btnActualizaTipoDesarrollo</tabstop>
-  <tabstop>btnAgregarTipoDesarrollo</tabstop>
-  <tabstop>txtIdTipoDesarrolloSeleccionado</tabstop>
-  <tabstop>tabla_metodos</tabstop>
-  <tabstop>txtMetodoNuevo</tabstop>
-  <tabstop>btnElejirMetodo</tabstop>
-  <tabstop>btnActualizaMetodo</tabstop>
-  <tabstop>btnAgregarMetodo</tabstop>
-  <tabstop>txtIdMetodoSeleccionado</tabstop>
-  <tabstop>btnConsultaProyecto</tabstop>
-  <tabstop>txtUsuarioActivo</tabstop>
-  <tabstop>txtIdSeccion</tabstop>
-  <tabstop>tabla_periodos</tabstop>
-  <tabstop>txtIdSeccionLista</tabstop>
-  <tabstop>RegActualListaPeriodo</tabstop>
-  <tabstop>TotalReg</tabstop>
-  <tabstop>optAno</tabstop>
-  <tabstop>optTrayecto</tabstop>
-  <tabstop>optSeccion</tabstop>
-  <tabstop>txtFiltro</tabstop>
-  <tabstop>btnSeleccionar</tabstop>
-  <tabstop>btnCerrarLista</tabstop>
-  <tabstop>cmbTrayecto</tabstop>
-  <tabstop>cmbTipoAsesor</tabstop>
-  <tabstop>tablaTutores</tabstop>
-  <tabstop>btnAsignarTutor</tabstop>
-  <tabstop>btnRemoverTutor</tabstop>
-  <tabstop>txtCedulaTutor</tabstop>
-  <tabstop>btnListaTutores</tabstop>
-  <tabstop>tabla_personas</tabstop>
-  <tabstop>txtFiltroPersonas</tabstop>
-  <tabstop>btnNuevoRegistro</tabstop>
-  <tabstop>btnEditarRegistro</tabstop>
-  <tabstop>btnSelPersona</tabstop>
-  <tabstop>btnRetorno</tabstop>
-  <tabstop>optCedula</tabstop>
-  <tabstop>optNombre</tabstop>
-  <tabstop>optApellido</tabstop>
-  <tabstop>txtCedula</tabstop>
-  <tabstop>txtNombre</tabstop>
-  <tabstop>txtApellido</tabstop>
-  <tabstop>optMasculino</tabstop>
-  <tabstop>optFemenino</tabstop>
-  <tabstop>txtTelefono</tabstop>
-  <tabstop>btnEstado</tabstop>
-  <tabstop>btnGuardarPersonas</tabstop>
-  <tabstop>btnDescartarPersonas</tabstop>
-  <tabstop>btnRegresar</tabstop>
-  <tabstop>contador_registros</tabstop>
-  <tabstop>txtIdProyecto</tabstop>
-  <tabstop>txtIdMetodo</tabstop>
-  <tabstop>txtIdTipoDesarrollo</tabstop>
  </tabstops>
  <resources/>
  <connections/>

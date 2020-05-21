@@ -227,6 +227,7 @@ class DialogoSolvencias(QDialog):
 			QMessageBox.warning(self,"Error...", "Cedula del Estudiante no esta registrado, dirijase al modulo de registro de estudiantes, verifique la informacion", QMessageBox.Ok)
 			self.txtCedula.setText("")
 
+	#Rutina para buscar los datos y proyectos de un estudiante luego de ingresar su cedula
 	def buscarEstudiante(self):
 		self.encontrar = 0
 		if self.txtCedula.text()=='' or self.txtCedula.text()=='0':
@@ -416,19 +417,7 @@ class DialogoSolvencias(QDialog):
 	def cerrar(self):
 		self.close()
 
-
-#					0 cedula, 
-#					1 ano_trayecto, 
-#					2 trayecto,
-#					3 seccion,
-#					4 tipo_seccion
-#					5 ano_seccion, 
-#					6 titulo_proyecto, 
-#					7 nombre_informe_codificado, 
-#					8 nombre_desarrollo_codificado, 
-#					9 nombre_manual_codificado
-
-
+# Constructor para ejecutar el modulo independiente del programa principal, descarcar para hacer pruebas
 
 #app = QApplication(sys.argv)
 #PSolvencias = DialogoSolvencias()

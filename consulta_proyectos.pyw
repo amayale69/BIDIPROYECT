@@ -5,12 +5,12 @@
 # Producto desarrollado para el PNF de Informatica del UPTJAA Extension El Tigre     #
 # Octubre (2018)                                                                     #
 # Version 1.0                                                                        #
-# Modulo: Registro Integrado de Proyectos                                            #
-# Descripción: Tiene como funcion crear las secciones de cada trayecto del periodo   #
-#              academico y registrar los proyectos con sus integrantes de cada       #
-#              sección y guardar y codificar los soportes digitales de cada proyecto # 
+# Modulo: Consulta de Proyectos                                                      #
+# Descripción: Consulta los datos de los proyectos que se encuentran en la tabla de  #
+#              los diez (10) ultimos proyectos en la pantalla principal del sistema  # 
 #------------------------------------------------------------------------------------#
 
+# Importacion de librerias
 import sys, os, shutil, functools
 from PyQt5.QtWidgets import QApplication, QPushButton, QAction, QMessageBox, QDialog, QTableWidget, QTableWidgetItem, QMenu, QFileDialog
 from PyQt5 import uic
@@ -119,6 +119,7 @@ class DialogoConsultaProyectos(QDialog):
 		self.btnDescargaDesarrollo.clicked.connect(self.descargaDesarrollo)
 		self.btnDescargaManual.clicked.connect(self.descargaManual)
 
+	# Rutima para visualizar el documento del proyecto por pantalla
 	def VerProyecto(self):
 		lv_informe = self.txtEstadoInforme.text()
 		lv_NInforme = self.txtNInformeCod.text()
@@ -129,6 +130,7 @@ class DialogoConsultaProyectos(QDialog):
 		else:
 			QMessageBox.warning(self, "Base de Datos", "El proyecto no tiene el documento/archivo solicitado", QMessageBox.Ok)
 
+	# Rutima para descargar el documento del proyecto a la carpeta solicitada al usuario
 	def descargaInforme(self):
 		lv_informe = self.txtEstadoInforme.text()
 		lv_NInforme = self.txtNInformeCod.text()
@@ -151,6 +153,7 @@ class DialogoConsultaProyectos(QDialog):
 		else:
 			QMessageBox.warning(self, "Base de Datos", "El proyecto no tiene el documento/archivo solicitado", QMessageBox.Ok)
 
+	# Rutima para descargar los codigos fuentes del proyecto a la carpeta solicitada al usuario
 	def descargaDesarrollo(self):
 		lv_desarrollo = self.txtEstadoDesarrollo.text()
 		lv_NDesarrollo = self.txtNDesarrolloCod.text()
@@ -173,6 +176,7 @@ class DialogoConsultaProyectos(QDialog):
 		else:
 			QMessageBox.warning(self, "Base de Datos", "El proyecto no tiene el documento/archivo solicitado", QMessageBox.Ok)
 
+	# Rutima para descargar los manuales del proyecto a la carpeta solicitada al usuario
 	def descargaManual(self):
 		lv_manuales = self.txtEstadoManual.text()
 		lv_NManual = self.txtEstadoManual.text()
@@ -195,8 +199,11 @@ class DialogoConsultaProyectos(QDialog):
 		else:
 			QMessageBox.warning(self, "Base de Datos", "El proyecto no tiene el documento/archivo solicitado", QMessageBox.Ok)
 
+	# Rutima para salir y cerrar el modulo
 	def cerrar(self):
 		self.close()
+
+# Constructor para ejecutar el modulo independiente del programa principal, descarcar para hacer pruebas
 
 #app = QApplication(sys.argv)
 #PConsultaProyecto = DialogoConsultaProyectos()

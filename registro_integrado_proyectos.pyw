@@ -259,6 +259,8 @@ class DialogoIntProyectos(QDialog):
 
 		#Configurando Tabla de Busqueda de Personas
 		self.txtCedulaSeleccionada.setText("0")
+		self.txtCedulaSeleccionada.hide()
+		self.RegActual.hide()
 		self.tabla_personas.setAlternatingRowColors(True)
 		#Instruccion para deshabilitar edicion
 		self.tabla_personas.setEditTriggers(QTableWidget.NoEditTriggers)
@@ -353,13 +355,14 @@ class DialogoIntProyectos(QDialog):
 			self.tabla_tdesarrollo.setColumnWidth(indice, ancho)
 		self.tabla_tdesarrollo.setColumnHidden(1, True)
 
-		self.tabla_personas.itemClicked.connect(self.actContadorActual)
+		self.tabla_personas.itemClicked.connect(self.actContadorActualPersonas)
 
 		self.btnRegresar.clicked.connect(self.VolverALista)
 		self.btnNuevoRegistro.clicked.connect(self.nuevoRegistro)
 		self.btnEditarRegistro.clicked.connect(self.editarRegistro)
 #		self.btnSalir.clicked.connect(self.cerrar_dialogo)
 		self.btnGuardarPersonas.clicked.connect(self.guardarRegistro)
+		self.btnSelPersona.clicked.connect(self.seleccionarRegistro)
 		self.btnDescartarPersonas.clicked.connect(self.retornarValores)
 		self.optCedula.clicked.connect(self.ordenarTablaPersonas)
 		self.optNombre.clicked.connect(self.ordenarTablaPersonas)
@@ -368,9 +371,8 @@ class DialogoIntProyectos(QDialog):
 		self.grpPersonas.hide()
 
 		#Crear disparador para saber el numero de la fila de la tabla que ha sido seleccionada
-		self.tabla_personas.itemClicked.connect(self.actContadorActual)
+		self.tabla_personas.itemClicked.connect(self.actContadorActualPersonas)
 		self.tabla_personas.itemDoubleClicked.connect(self.seleccionarRegistro)
-		self.btnSelPersona.clicked.connect(self.seleccionarRegistro)
 
 		#Crear disparador de evento para buscar datos en la tabla por texto introducido por usuario
 		self.txtFiltro.textChanged.connect(self.buscarDato)
@@ -488,8 +490,6 @@ class DialogoIntProyectos(QDialog):
 		self.TotalReg.hide()
 		self.grpTDesarrollo.hide()
 		self.grpMetodos.hide()
-		self.txtCedulaSeleccionada.hide()
-		self.RegActual.hide()
 
 		self.tabPersonas.setTabEnabled(0, True)
 		
@@ -719,11 +719,6 @@ class DialogoIntProyectos(QDialog):
 				index = index + 1
 			
 
-
-
-
-
-
 	def cargarPeriodos(self):
 		cursor_lista_periodos = ("""SELECT tray.id_trayecto, tray.periodo_academico, tray.nivel, sec.siglas, sec.tipo_seccion, 
 			sec.ano_seccion, sec.id_seccion 
@@ -871,9 +866,6 @@ class DialogoIntProyectos(QDialog):
 		self.RegActualPeriodo = int(self.txtContadorPeriodo.text())
 		self.TotalRegPeriodo = int(self.txtTotalRPeriodo.text())
 		self.ProxRegPeriodo = int(self.txtTotalRPeriodo.text()) + 1
-		if self.TotalRegPeriodo == 0:
-			self.txtIdPeriodo.setText("0")
-			self.IdPeriodo = 0
 		self.idPeriodoOriginal = int(self.txtIdPeriodo.text())
 		self.txtContadorPeriodo.setText(str(self.ProxRegPeriodo))
 		self.activarCampos()
@@ -1296,10 +1288,7 @@ class DialogoIntProyectos(QDialog):
 		
 	def cargarDatosProyectos(self):
 		self.bdvacia = 0
-		if self.txtIdSeccion.text() == "":
-			self.IdSeccion = 0
-		else:
-			self.IdSeccion = int(self.txtIdSeccion.text())
+		self.IdSeccion = int(self.txtIdSeccion.text())
 		self.bdvacia = 0
 		self.tabla_seccion_grupos_proyectos.clearSelection()
 		self.tabla_seccion_grupos_proyectos.clearContents()
@@ -1836,15 +1825,21 @@ class DialogoIntProyectos(QDialog):
 				index2 = index2 - 1
 
 	def descartarProyecto(self):
-		self.txtContadorProyectos.setText(str(self.proyectoActual+1))
-		if self.TotalProyectosPorPeriodos > 0:
-			self.llenarPantProyecto(self.proyectoActual)
-		else:
+		if self.nuevoproyecto == 1:
 			self.limpiarProyecto()
-		self.desactivarCamposProyecto()
-		self.bdedita = 0
-		self.bdnuevo = 0
-		self.nuevoproyecto = 0
+			self.nuevoproyecto = 0
+			self.desactivarCamposProyecto()
+			self.CerrarVentanaProyectos()
+		else:
+			self.txtContadorProyectos.setText(str(self.proyectoActual+1))
+			if self.TotalProyectosPorPeriodos > 0:
+				self.llenarPantProyecto(self.proyectoActual)
+			else:
+				self.limpiarProyecto()
+			self.desactivarCamposProyecto()
+			self.bdedita = 0
+			self.bdnuevo = 0
+			self.nuevoproyecto = 0
 
 	def editarProyecto(self):
 		self.bdedita = 1
@@ -1946,11 +1941,10 @@ class DialogoIntProyectos(QDialog):
 	def eliminarProyecto(self):
 		lv_IdProyecto = int(self.txtIdProyecto.text())
 		self.elimina = 1
-#		if self.txtEstadoInforme.text() == "Entregado" or self.txtEstadoDesarrollo.text() == "Entregado" or self.txtEstadoManual.text() == "Entregado":
-#			QMessageBox.warning(self,"Error..", "No puede eliminar proyectos entregados por estudiantes..", QMessageBox.Ok)
-#			self.elimina = 0
-#		elif self.TotalIntegrantes > 0: 
-		if self.TotalIntegrantes > 0: 
+		if self.txtEstadoInforme.text() == "Entregado" or self.txtEstadoDesarrollo.text() == "Entregado" or self.txtEstadoManual.text() == "Entregado":
+			QMessageBox.warning(self,"Error..", "No puede eliminar proyectos entregados por estudiantes..", QMessageBox.Ok)
+			self.elimina = 0
+		elif self.TotalIntegrantes > 0: 
 			respuesta = QMessageBox.warning(self,"Sistema", "Este proyecto tiene estudiantes registrados, desea eliminar el proyecto y sus integrantes?", QMessageBox.Yes | QMessageBox.No)
 			if respuesta == QMessageBox.Yes:
 				borrar_integrantes = "DELETE FROM integrantes WHERE FK_id_proyecto = '%i'" % lv_IdProyecto
@@ -2177,7 +2171,6 @@ class DialogoIntProyectos(QDialog):
 		#Deshabilitar Tabs Registro de Proyectos
 		self.tabWidget.setTabEnabled(1, False)
 		self.tabWidget.setCurrentIndex(0)
-		self.cargarDatosProyectos()
 
 	def mostrarListaEstudiantes(self):
 		self.TipoPersona = 'EST'
@@ -2270,10 +2263,6 @@ class DialogoIntProyectos(QDialog):
 		self.txtNombre.setText("")
 		self.txtApellido.setText("")
 		self.txtTelefono.setText("")
-		if self.TipoPersona=='EST':
-			self.lblCedPersona.setText("Cedula Estudiante:")
-		else:
-			self.lblCedPersona.setText("Cedula Tutor:")
 		self.btnEstado.setText("Activo")
 		self.btnEstado.setStyleSheet("border: 1px solid black; background: darkgreen; color: white; font-size: 12px;")
 		#Habilita Tab Registro
@@ -2322,15 +2311,9 @@ class DialogoIntProyectos(QDialog):
 
 	def seleccionaTutor(self):
 		row=self.tablaTutores.currentRow()
-		self.txtCedulaTutor.setText(self.tablaTutores.item(row, 0).text())
-		if self.tablaTutores.item(row, 3).text() == "Academico":
-			self.cmbTipoAsesor.setCurrentIndex(0)
-		elif self.tablaTutores.item(row, 3).text() == "Tecnico Metodologico":
-			self.cmbTipoAsesor.setCurrentIndex(1)
-		else:
-			self.cmbTipoAsesor.setCurrentIndex(2)
+		self.txtCedulaTutor.setText(self.tablaTutores.item(row, 0).text()) 
 
-	def actContadorActual(self):
+	def actContadorActualPersonas(self):
 		fila = self.tabla_personas.currentRow()
 		totalregistros = self.tabla_personas.rowCount()
 		cedula = self.tabla_personas.item(fila, 0).text().replace(" ", "")
@@ -2545,17 +2528,15 @@ class DialogoIntProyectos(QDialog):
 
 	def seleccionarRegistro(self):
 		fila = self.tabla_personas.currentRow()
-		if fila != -1:
-			if self.TipoPersona == 'EST':
-				self.txtCedulaEstudiante.setText(self.tabla_personas.item(fila,0).text().replace(" ", ""))
-				self.grpPersonas.hide()
-				self.AgregarIntegrante()
-			else:
-				self.txtCedulaTutor.setText(self.tabla_personas.item(fila,0).text().replace(" ", ""))
-				self.grpPersonas.hide()
-				self.AgregarTutor()
+		if self.TipoPersona == 'EST':
+			self.txtCedulaEstudiante.setText(self.tabla_personas.item(fila,0).text().replace(" ", ""))
+			self.grpPersonas.hide()
+			self.AgregarIntegrante()
 		else:
-			QMessageBox.warning(self,"Adventencia", "Debe elegir una persona de la lista antes de pulsar 'Seleccionar'", QMessageBox.Ok)
+			self.txtCedulaTutor.setText(self.tabla_personas.item(fila,0).text().replace(" ", ""))
+			self.grpPersonas.hide()
+			self.AgregarTutor()
+
 	def AgregarIntegrante(self):
 		self.continua = 1
 		self.encontrar = 0
@@ -2612,9 +2593,7 @@ class DialogoIntProyectos(QDialog):
 					QMessageBox.warning(self,"Adventencia", "La cedula indicada no se encuentra en el registro de estudiantes.. operacion detenida!", QMessageBox.Ok)
 
 	def RemoverIntegrante(self):
-		if self.txtCedulaEstudiante.text() == '' or self.txtCedulaEstudiante.text() == '0':
-			QMessageBox.warning(self,"Error", "Debe seleccionar un estudiante antes de eliminar integrante", QMessageBox.Ok)
-		else:
+		if int(self.txtCedulaEstudiante.text()) > 0:
 			row=int(self.txtContadorProyectos.text()) - 1
 			lv_proyecto = int(self.txtIdProyecto.text())
 			lv_cedula = int(self.txtCedulaEstudiante.text())
@@ -2625,6 +2604,8 @@ class DialogoIntProyectos(QDialog):
 				self.LlenarTablaIntegrantes()
 				QMessageBox.warning(self,"Base de Datos", "Integrante fue removido exitosamente...", QMessageBox.Ok)
 				self.txtCedulaEstudiante.setText("")		
+		else:
+			QMessageBox.warning(self,"Error", "Debe seleccionar un estudiante antes de eliminar integrante", QMessageBox.Ok)
 
 	def AgregarTutor(self):
 		self.continua = 1
@@ -2671,9 +2652,7 @@ class DialogoIntProyectos(QDialog):
 					QMessageBox.warning(self,"Adventencia", "La cedula indicada no se encuentra en el registro de tutores.. operacion detenida!", QMessageBox.Ok)
 
 	def RemoverTutor(self):
-		if self.txtCedulaTutor.text() == '' or self.txtCedulaEstudiante.text() == '0':
-			QMessageBox.warning(self,"Error", "Debe seleccionar un tutor de la lista antes de eliminar asesor", QMessageBox.Ok)
-		else:
+		if int(self.txtCedulaTutor.text()) > 0:
 			#row=int(self.txtContadorProyectos.text()) - 1
 			lv_proyecto = int(self.txtIdProyecto.text())
 			lv_cedula = int(self.txtCedulaTutor.text())
@@ -2684,8 +2663,10 @@ class DialogoIntProyectos(QDialog):
 				eliminar_tutor = "DELETE FROM es_asesorado WHERE FK_id_proyecto = '%i' and FK_cedula_tutor = '%i' and rol = '%s'" % (lv_proyecto, lv_cedula, lv_tipo_tutor)
 				self.cursor.execute(eliminar_tutor)
 				self.LlenarTablaIntegrantes()
-				QMessageBox.warning(self,"Base de Datos", "Tutor fue removido exitosamente...", QMessageBox.Ok)
+				QMessageBox.warning(self,"Base de Datos", "Integrante fue removido exitosamente...", QMessageBox.Ok)
 				self.txtCedulaTutor.setText("")		
+		else:
+			QMessageBox.warning(self,"Error", "Debe seleccionar un estudiante antes de eliminar integrante", QMessageBox.Ok)
 
 	def buscarCedula(self,lv_cedula):
 		rows=[]
