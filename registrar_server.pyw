@@ -71,6 +71,7 @@ class DialogoAcceso(QDialog):
 		self.BD_Name = self.txtDatabase.text()
 		self.BD_User = self.txtUsuarioBD.text()
 		self.BD_Pass = self.txtClaveBD.text()
+		print(self.BD_Name + ", " + self.BD_User + ", " + self.BD_Pass)
 		if self.txtDatabase.text() == '' or self.txtUsuarioBD.text() == '':
 			QMessageBox.warning(self, "Error", "No ha cargado los datos de acceso a la Base de Datos, registre los datos o pulse salir", QMessageBox.Ok)
 		else:
@@ -95,20 +96,19 @@ class DialogoAcceso(QDialog):
 				print("Proceso Archivo de Registro Creado y/o Actualizado...")
 				respuesta=QMessageBox.warning(self,"Adventencia", "Desea crear las tablas del sistema?: ", QMessageBox.Yes | QMessageBox.No)
 				if respuesta == QMessageBox.Yes:
-					crear_tablas()
+					self.crear_tablas()
 					self.db.close()
 				self.close()
 
 	# Rutina para crear las estructuras de datos en la Base de Datos
 	def crear_tablas(self):
+		print('Entro a Crear Tablas')
 		self.db.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
 		cursor = self.db.cursor()
-		cursor2 = self.db.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
 		hoy = datetime.today()
 		formato_fecha2 = "%Y-%m-%d %H:%M:%S"
 		lv_fechareg = hoy.strftime(formato_fecha2)
-
 		crear_autoinc_trayecto = "CREATE SEQUENCE public.id_trayecto_seq INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 999999999 CACHE 1"
 		cursor.execute(crear_autoinc_trayecto)
 
@@ -129,6 +129,7 @@ class DialogoAcceso(QDialog):
 
 		crear_autoinc6 = "CREATE SEQUENCE public.id_accede_seq INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 999999999 CACHE 1"
 		cursor.execute(crear_autoinc6)
+		print('Paso Definir Autoincrementadores')
 
 		Crear_Tipo_Genero = "CREATE TYPE public.generos AS ENUM ('Masculino', 'Femenino')"
 		Comm_Tipo_Genero = "COMMENT ON TYPE public.generos IS 'Tipo de Dato Enum para seleccionar sexo de las personas'"
@@ -155,6 +156,7 @@ class DialogoAcceso(QDialog):
 		cursor.execute(Comm_Estado_Registro)
 		cursor.execute(Crear_Roles)
 		cursor.execute(Comm_Roles)
+		print('Paso Definir Tipos Enums')
 
 		lv_usuario = 'ADMIN'
 		lv_padmin = 'ADMIN'
@@ -176,7 +178,7 @@ class DialogoAcceso(QDialog):
 		cursor.execute(comm4_tb_usuarios)
 		cursor.execute(comm5_tb_usuarios)
 		cursor.execute(inserta_usuario_admin)
-
+		print('Paso Usuarios')
 
 		crear_tb_metodologia = "CREATE TABLE public.metodologia (id_metodo integer NOT NULL DEFAULT nextval('id_metodo_seq'::regclass), descripcion character varying(40), CONSTRAINT id_metodo_pkey PRIMARY KEY (id_metodo)) WITH (OIDS = FALSE) TABLESPACE pg_default"
 		comm1_tb_metodologia = "COMMENT ON TABLE public.metodologia IS 'Registro de proyectos del periodo academico por trayecto y seccion'"
@@ -190,6 +192,7 @@ class DialogoAcceso(QDialog):
 		cursor.execute(comm3_tb_metodologia)
 		cursor.execute(insertar_metodologia)
 
+		print('Paso Metodologia')
 		crear_tb_tipo_de_desarrollo = "CREATE TABLE public.tipo_de_desarrollo (id_tipo_desarrollo integer NOT NULL DEFAULT nextval('id_tipo_desarrollo_seq'::regclass), tipo_desarrollo character varying(40), CONSTRAINT id_tipo_desarrollo_pkey PRIMARY KEY (id_tipo_desarrollo)) WITH (OIDS = FALSE) TABLESPACE pg_default"
 		comm1_tb_tipo_de_desarrollo = "COMMENT ON TABLE public.tipo_de_desarrollo IS 'Registro de tipos de desarrollo'"
 		comm2_tb_tipo_de_desarrollo = "COMMENT ON COLUMN public.tipo_de_desarrollo.id_tipo_desarrollo IS 'Campo serial y clave principal del tipo de desarrollo'"
@@ -214,6 +217,7 @@ class DialogoAcceso(QDialog):
 		cursor.execute(comm3_tb_trayecto)
 		cursor.execute(comm4_tb_trayecto)
 		cursor.execute(insertar_trayecto)
+		print('Paso Trayectos')
 
 		crear_tb_secciones	= "CREATE TABLE public.secciones (id_seccion integer NOT NULL DEFAULT nextval('id_seccion_seq'::regclass), siglas ID_seccion DEFAULT 'IF-01'::ID_seccion, tipo_seccion trayecto_tipo DEFAULT 'Regular'::trayecto_tipo, ano_seccion numeric(4,0), nro_estudiantes integer, FK_id_trayecto integer, CONSTRAINT id_seccion_pkey PRIMARY KEY (id_seccion), CONSTRAINT FK_id_trayecto FOREIGN KEY (FK_id_trayecto) REFERENCES public.trayecto (id_trayecto) MATCH SIMPLE ON UPDATE CASCADE ON DELETE CASCADE)"
 		comm1_tb_secciones	= "COMMENT ON TABLE public.secciones IS 'Registro de secciones'"
@@ -229,6 +233,7 @@ class DialogoAcceso(QDialog):
 		cursor.execute(comm4_tb_secciones)
 		cursor.execute(comm5_tb_secciones)
 		cursor.execute(comm6_tb_secciones)
+		print('Paso Secciones')
 
 		crear_tb_proyecto = "CREATE TABLE public.proyectos (id_proyecto integer NOT NULL DEFAULT nextval('id_proyecto_seq'::regclass), codigo_proyecto character varying(28), numero_grupo_proyecto numeric(2,0), titulo_proyecto character varying(100), nombre_informe_codificado character varying(40), nombre_desarrollo_codificado character varying(40), nombre_manual_codificado character varying(40), FK_id_seccion integer, FK_id_metodo integer, FK_id_tipo_desarrollo integer, CONSTRAINT id_proyecto_pkey PRIMARY KEY (id_proyecto), CONSTRAINT FK_id_seccion FOREIGN KEY (FK_id_seccion) REFERENCES public.secciones (id_seccion) MATCH SIMPLE ON UPDATE CASCADE ON DELETE CASCADE, CONSTRAINT FK_id_metodo FOREIGN KEY (FK_id_metodo) REFERENCES public.metodologia (id_metodo) MATCH SIMPLE ON UPDATE CASCADE ON DELETE CASCADE, CONSTRAINT FK_id_tipo_desarrollo FOREIGN KEY (FK_id_tipo_desarrollo) REFERENCES public.tipo_de_desarrollo (id_tipo_desarrollo) MATCH SIMPLE ON UPDATE CASCADE ON DELETE CASCADE) WITH (OIDS = FALSE) TABLESPACE pg_default"
 		comm1_tb_proyecto	= "COMMENT ON TABLE public.proyectos IS 'Registro de proyectos del periodo academico por trayecto y seccion'"
@@ -249,6 +254,7 @@ class DialogoAcceso(QDialog):
 		cursor.execute(comm6_tb_proyecto)
 		cursor.execute(comm7_tb_proyecto)
 		cursor.execute(comm8_tb_proyecto)
+		print('Paso Proyectos')
 
 		crear_tb_accede = "CREATE TABLE public.accede (id_accede integer NOT NULL DEFAULT nextval('id_accede_seq'::regclass), FK_usuario character varying(15), FK_id_proyecto integer, actividad character varying(10), fecha date, CONSTRAINT id_registra_pkey PRIMARY KEY (id_accede), CONSTRAINT FK_usuario FOREIGN KEY (FK_usuario) REFERENCES public.usuarios (usuario) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION, CONSTRAINT FK_id_proyecto FOREIGN KEY (FK_id_proyecto) REFERENCES public.proyectos (id_proyecto) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION) WITH (OIDS = FALSE) TABLESPACE pg_default"
 		comm1_tb_accede = "COMMENT ON TABLE public.accede IS 'Registro de proyectos del periodo academico por trayecto y seccion'"
@@ -260,6 +266,7 @@ class DialogoAcceso(QDialog):
 		cursor.execute(comm2_tb_accede)
 		cursor.execute(comm3_tb_accede)
 		cursor.execute(comm4_tb_accede)
+		print('Paso Accede')
 
 		crear_tb_estudiante	= "CREATE TABLE public.estudiante (cedula_estudiante numeric(8,0), nombre_estudiante character varying(30), apellido_estudiante character varying(30), genero_estudiante generos DEFAULT 'Masculino'::generos, telefono_estudiante character varying(16), estado Estado_Registro DEFAULT 'Activo'::Estado_Registro, CONSTRAINT cedula_estudiante_pkey PRIMARY KEY (cedula_estudiante))"
 		comm1_tb_estudiante	= "COMMENT ON TABLE public.estudiante IS 'Registro de estudiantes'"
@@ -277,6 +284,7 @@ class DialogoAcceso(QDialog):
 		cursor.execute(comm5_tb_estudiante)
 		cursor.execute(comm6_tb_estudiante)
 		cursor.execute(comm7_tb_estudiante)
+		print('Paso Estudiante')
 
 		crear_tb_tutores	= "CREATE TABLE public.tutores (cedula_tutor numeric(8,0), nombre_tutor character varying(30), apellido_tutor character varying(30), genero_tutor generos DEFAULT 'Masculino'::generos, telefono_tutor character varying(16), cantidad_alumnos integer, estado Estado_Registro DEFAULT 'Activo'::Estado_Registro, CONSTRAINT cedula_tutor_pkey PRIMARY KEY (cedula_tutor))"
 		comm1_tb_tutores	= "COMMENT ON TABLE public.tutores IS 'Registro de tutores'"
@@ -296,6 +304,7 @@ class DialogoAcceso(QDialog):
 		cursor.execute(comm6_tb_tutores)
 		cursor.execute(comm7_tb_tutores)
 		cursor.execute(comm8_tb_tutores)
+		print('Paso Tutores')
 
 		crear_tb_elaboran	= "CREATE TABLE public.elaboran (FK_id_proyecto integer, FK_cedula_estudiante numeric(8,0), CONSTRAINT FK_cedula_estudiante FOREIGN KEY (FK_cedula_estudiante) REFERENCES public.estudiante (cedula_estudiante) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION, CONSTRAINT FK_id_proyecto FOREIGN KEY (FK_id_proyecto) REFERENCES public.proyectos (id_proyecto) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION) WITH (OIDS = FALSE) TABLESPACE pg_default"
 		comm1_tb_elaboran	= "COMMENT ON TABLE public.elaboran IS 'Relacion entre Estudiante y Proyecto'"
@@ -305,6 +314,7 @@ class DialogoAcceso(QDialog):
 		cursor.execute(comm1_tb_elaboran)
 		cursor.execute(comm2_tb_elaboran)
 		cursor.execute(comm3_tb_elaboran)
+		print('Paso Elaboran')
 
 		crear_tb_asesora	= "CREATE TABLE public.es_asesorado (FK_id_proyecto integer, FK_cedula_tutor numeric(8,0), rol Roles DEFAULT 'Academico'::Roles, CONSTRAINT FK_id_proyecto FOREIGN KEY (FK_id_proyecto) REFERENCES public.proyectos (id_proyecto) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION, CONSTRAINT FK_cedula_tutor FOREIGN KEY (FK_cedula_tutor) REFERENCES public.tutores (cedula_tutor) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION) WITH (OIDS = FALSE) TABLESPACE pg_default"
 		comm1_tb_asesora	= "COMMENT ON TABLE public.es_asesorado IS 'Relacion entre Estudiante y Seccion'"
@@ -316,6 +326,7 @@ class DialogoAcceso(QDialog):
 		cursor.execute(comm2_tb_asesora)
 		cursor.execute(comm3_tb_asesora)
 		cursor.execute(comm4_tb_asesora)
+		print('Paso Asesora')
 		cursor.close()
 
 # Constructor para ejecutar el programa, este modulo se ejecuta independiente del sistema y generalmente

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
+    <width>1010</width>
     <height>600</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>1200</width>
+    <width>1010</width>
     <height>600</height>
    </size>
   </property>
@@ -117,7 +117,7 @@ QPushButton:hover{
   <widget class="QPushButton" name="btnCerrar">
    <property name="geometry">
     <rect>
-     <x>800</x>
+     <x>720</x>
      <y>530</y>
      <width>121</width>
      <height>31</height>
@@ -155,7 +155,7 @@ QPushButton:hover{
   <widget class="QPushButton" name="btnVerProyecto">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>240</x>
      <y>530</y>
      <width>111</width>
      <height>31</height>
@@ -171,7 +171,7 @@ QPushButton:hover{
   <widget class="QPushButton" name="btnInforme">
    <property name="geometry">
     <rect>
-     <x>440</x>
+     <x>360</x>
      <y>530</y>
      <width>111</width>
      <height>31</height>
@@ -186,7 +186,7 @@ QPushButton:hover{
     <rect>
      <x>10</x>
      <y>80</y>
-     <width>1181</width>
+     <width>981</width>
      <height>381</height>
     </rect>
    </property>
@@ -274,7 +274,7 @@ QPushButton:hover{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1201</width>
+     <width>1011</width>
      <height>601</height>
     </rect>
    </property>
@@ -291,7 +291,7 @@ QPushButton:hover{
   <widget class="QPushButton" name="btnDesarrollo">
    <property name="geometry">
     <rect>
-     <x>560</x>
+     <x>480</x>
      <y>530</y>
      <width>111</width>
      <height>31</height>
@@ -304,7 +304,7 @@ QPushButton:hover{
   <widget class="QPushButton" name="btnManuales">
    <property name="geometry">
     <rect>
-     <x>680</x>
+     <x>600</x>
      <y>530</y>
      <width>111</width>
      <height>31</height>
@@ -333,7 +333,7 @@ QPushButton:hover{
   <widget class="QPushButton" name="btnCargaProyectos">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>100</x>
      <y>530</y>
      <width>131</width>
      <height>31</height>
@@ -348,7 +348,7 @@ QPushButton:hover{
     <rect>
      <x>610</x>
      <y>480</y>
-     <width>311</width>
+     <width>231</width>
      <height>20</height>
     </rect>
    </property>

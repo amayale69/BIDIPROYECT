@@ -1,18 +1,3 @@
-#-------------------------------------------------------------------------------------#
-# Programa: Biblioteca Digital de Proyectos de Informatica                            #
-# Programador: Luis Amaya                                                             #
-# Analistas: Jose Astudillo / josmary Botaban                                         #
-# Producto desarrollado para el PNF de Informatica del UPTJAA Extension El Tigre      #
-# Octubre (2018)                                                                      #
-# Version 1.0                                                                         #
-# Modulo: Bliblioteca de Proyectos                                                    #
-# Descripción: En este módulo muestra la lista de los proyectos registrados en el     #
-#              sistema para consultar y descargar los documentos y desarrollos de     #
-#              los mismos                                                             # 
-#-------------------------------------------------------------------------------------#
-
-# Importacion de librerias del sistema
-
 import sys, os, shutil, functools, re
 from PyQt5.QtWidgets import QApplication, QPushButton, QMessageBox, QDialog, QTableWidget, QTableWidgetItem, QFileDialog, QAction, QGridLayout, QAbstractItemView, QHeaderView, QMenu, QActionGroup
 from PyQt5 import uic
@@ -48,8 +33,6 @@ class DialogoBiblioteca(QDialog):
 		self.BD_Name = ''
 		self.BD_User = ''
 		self.BD_Pass = ''
-		self.fila = 0
-		self.columna = 0
 		self.archivo_infosvr = open('regsvr.txt','r')
 		self.infosvr = self.archivo_infosvr.readlines()
 		self.BD_Name = self.infosvr[0]
@@ -134,7 +117,9 @@ class DialogoBiblioteca(QDialog):
 		self.tablaProyectos.setSortingEnabled(False)
 		if self.tablaProyectos.rowCount() > 0:
 			self.tablaProyectos.clearSelection()
+			#self.tabla_personas.disconnect()
 			self.tablaProyectos.clearContents()
+			#self.tabla_personas.setRowCount(0)
 			index2 = self.tablaProyectos.rowCount()
 			while index2 > 0:
 				index = index2 - 1
@@ -162,6 +147,7 @@ class DialogoBiblioteca(QDialog):
 		index = 0
 		for rows in self.cursor:
 			lv_titulo = str(rows[0])
+			print(lv_titulo)
 			lv_ano = str(rows[1])
 			lv_trayecto = str(rows[2])
 			lv_tutor = str(rows[3]) + " " + str(rows[4])
@@ -198,8 +184,9 @@ class DialogoBiblioteca(QDialog):
 			index = index + 1
 		self.TotalRegistrosTabla = index
 		self.tablaProyectos.setSortingEnabled(True)
+		if self.tablaProyectos.rowCount() == 0:
+			QMessageBox.warning(self, "Base de Datos", "No hay proyectos por listar, asegurese que los proyectos tengan estudiantes registrados y el tutor tecnico metodologico asignado", QMessageBox.Ok)
 
-	# Rutina para visualizar en linea el documento del proyecto
 	def VerProyecto(self):
 		if self.TotalRegistrosTabla > 0:
 			if self.tablaProyectos.currentRow() > -1:
@@ -217,7 +204,6 @@ class DialogoBiblioteca(QDialog):
 		else:
 			QMessageBox.warning(self, "Error", "La tabla esta vacía, por favor pulse el boton 'Cargar Tabla Proyectos' y seleccione el proyecto a visualizar", QMessageBox.Ok)
 
-	# Rutima para descargar el documento del proyecto a la carpeta solicitada al usuario
 	def descargaInforme(self):
 		if self.TotalRegistrosTabla > 0:
 			if self.tablaProyectos.currentRow() > -1:
@@ -247,7 +233,6 @@ class DialogoBiblioteca(QDialog):
 		else:
 			QMessageBox.warning(self, "Error", "La tabla esta vacía, por favor pulse el boton 'Cargar Tabla Proyectos' y seleccione el proyecto a descargar", QMessageBox.Ok)
 
-	# Rutina para descargar los códigos fuentes del desarrollo del proyecto
 	def descargaDesarrollo(self):
 		if self.TotalRegistrosTabla > 0:
 			if self.tablaProyectos.currentRow() > -1:
@@ -277,7 +262,6 @@ class DialogoBiblioteca(QDialog):
 		else:
 			QMessageBox.warning(self, "Error", "La tabla esta vacía, por favor pulse el boton 'Cargar Tabla Proyectos' y seleccione el proyecto a descargar", QMessageBox.Ok)
 
-	# Rutina para descargar los manuales del sistema
 	def descargaManual(self):
 		if self.TotalRegistrosTabla > 0:
 			if self.tablaProyectos.currentRow() > -1:
@@ -307,45 +291,43 @@ class DialogoBiblioteca(QDialog):
 		else:
 			QMessageBox.warning(self, "Error", "La tabla esta vacía, por favor pulse el boton 'Cargar Tabla Proyectos' y seleccione el proyecto a descargar", QMessageBox.Ok)
 
-	# Rutina para actualizar la posicion de la fila del registro al hacer click en un elemento de la tabla 
 	def actSeleccion(self):
-		self.fila = self.tablaProyectos.currentRow()
+		fila = self.tablaProyectos.currentRow()
 
-	# Rutina para buscar los datos introducidos por teclado en la tabla de acuerdo al orden de la tabla
 	def buscarDato(self):
 		lv_texto = self.txtFiltro.text().upper()
 		validar = re.match('^[a-zA-Z0-9\sáéíóúàèìòùäëïöüñ]+$', lv_texto, re.I)
 		if self.optTitulo.isChecked()== True:
-			self.columna = 0
+			columna = 0
 		elif self.optTrayecto.isChecked()==True:  
-			self.columna = 2
+			columna = 2
 		elif self.optTutor.isChecked()==True:  
-			self.columna = 3
+			columna = 3
 		elif self.optMetodo.isChecked()==True:  
-			self.columna = 4
+			columna = 4
 		else:
-			self.columna = 5
+			columna = 5
 		index = self.tablaProyectos.rowCount()
-		self.fila=0
+		fila=0
 		encontrar = 0
-		while self.fila < index:
-			lv_busqueda = self.tablaProyectos.item(self.fila,self.columna).text()
+		while fila < index:
+			lv_busqueda = self.tablaProyectos.item(fila,columna).text()
 			if lv_texto in lv_busqueda:
 				encontrar = 1
 				break;
-			self.fila = self.fila + 1
+			fila = fila + 1
 		if encontrar == 1:
-			posicion_inicial = self.tablaProyectos.item((index - 1), self.columna)
+			posicion_inicial = self.tablaProyectos.item((index - 1), columna)
 			self.tablaProyectos.scrollToItem(posicion_inicial)
-			posicion_final = self.tablaProyectos.item(self.fila, self.columna)
+			posicion_final = self.tablaProyectos.item(fila, columna)
 			self.tablaProyectos.scrollToItem(posicion_final)
-			self.tablaProyectos.setCurrentCell(self.fila, self.columna)
+			self.tablaProyectos.setCurrentCell(fila, columna)
 			
 			return True
 		else:
 			return False
 
-	# Rutina para finaj y ordenar la tabla de acuerdo a la seleccion del usuario
+
 	def ordenarTabla(self):
 		if self.optTitulo.isChecked():
 			self.tablaProyectos.horizontalHeader().setSortIndicator(0, Qt.AscendingOrder)
@@ -358,11 +340,8 @@ class DialogoBiblioteca(QDialog):
 		else:
 			self.tablaProyectos.horizontalHeader().setSortIndicator(5, Qt.AscendingOrder)
 
-	# Rutina para cerrar el modulo
 	def cerrar(self):
 		self.close()
-
-# Constructor para ejecutar el modulo independiente del programa principal, descarcar para hacer pruebas
 
 #app = QApplication(sys.argv)
 #PBiblioteca = DialogoBiblioteca()
